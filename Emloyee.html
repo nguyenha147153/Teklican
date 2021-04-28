@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emloyee</title>
+    
+<style>
+    @-webkit-keyframes gradientBG{
+        0%{background-position: 0% 50%}
+        50%{background-position: 100% 50%}
+        100%{background-position: 0% 50%}
+    }
+    @-moz-keyframes gradientBG{
+        0%{background-position: 0% 50%}
+        50%{background-position: 100% 50%}
+        100%{background-position: 0% 50%}
+    }
+    @-o-keyframes gradientBG{
+        0%{background-position: 0% 50%}
+        50%{background-position: 100% 50%}
+        100%{background-position: 0% 50%}
+    }
+    @keyframes gradientBG{
+        0%{background-position: 0% 50%}
+        50%{background-position: 100% 50%}
+        100%{background-position: 0% 50%}
+    }
+    body{
+        background: linear-gradient(270deg, #FF99FF,#0099FF);
+        background-size: 400% 400%;
+        -webkit-animation: gradientBG 30s ease infinite;
+        -moz-animation: gradientBG 30s ease infinite;
+        -o-animation: gradientBG 30s ease infinite;
+        animation: gradientBG 30s ease infinite;
+}
+form{
+    border:2px solid #222;
+    margin: 100px 575px;
+    padding: 10px;
+    background-color:lemonchiffon;
+    height: 250px;
+   
+}
+table{
+
+    margin: 0px 0px;
+    height: 200px;
+}
+#btn{
+    background-color:darkslategray
+    color:floralwhite;
+}
+p{
+    text-align: center ;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+    <form>
+        <p>Thông tin nhân viên</p>
+        <table>
+            <tr>
+                <td>Họ Tên: </td>
+                <td><input type="text" id="txtName" placeholder="Nhập họ tên"></td>
+            </tr>
+            <tr>
+                <td>Giới tính: </td>
+                <td>
+                    <input type="radio" name="gender" value="Nam">Nam
+                    <input type="radio" name="gender" value="Nữ">Nữ
+                </td>
+            </tr>
+            <tr>
+                <td> Điện thoại: </td>
+                <td>
+                    <input type="text" id="txtSdt" placeholder="Nhập số điện thoại">
+                </td>
+            </tr>
+            <tr>
+                <td>  Địa chỉ: </td>
+                <td>
+                    <input type="text" id="txtDiaChi" placeholder="Nhập địa chỉ">
+                </td>
+            </tr>
+            <tr>
+                <td>  Ngày sinh: </td>
+                <td>
+                    <input type="datetime-local" id="Ngaysinh" >
+                </td>
+            </tr>
+            <tr>    
+                
+             </tr>
+           <tr>
+               <td colspan="2" align="center"><input type="button" value="Xác nhận" id="btn"></td>
+            </tr>
+    </table>
+    
+    </form>
+    <script type="text/javascript">
+        document.getElementById("btn").onclick = function ()
+            {
+                var name = document.getElementById("txtName").value;
+                var checkbox = document.getElementsByName("gender");
+                var gioitinh;
+                for (var i = 0; i < checkbox.length; i++){
+                    if (checkbox[i].checked === true){
+                        gioitinh=checkbox[i].value;
+                    }
+                }
+                var sdt = document.getElementById("txtSdt").value;
+                var diachi= document.getElementById("txtDiaChi").value;
+                var date = new Date(document.getElementById("Ngaysinh").value); 
+                alert('Tên: '+name+'\n \Giới tính: '+gioitinh +'\n \Số điện thoại: '+sdt+'\n \Địa chỉ: '+diachi+'\n \Ngày sinh: '+ date);
+            };
+        
+    </script>
+   
+</body>
+</html>
