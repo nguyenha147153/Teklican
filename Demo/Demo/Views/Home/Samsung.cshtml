@@ -1,0 +1,163 @@
+﻿
+@{
+    ViewBag.Title = "Samsung";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="headerA">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="@Url.Action("Index","Home")"> <img src="@Url.Content("~/images/LGN.png")" width="105px"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <div class="search-box">
+                            <input class="search-txt" type="text" name="" placeholder="Bạn muốn tìm gì?">
+                            <a class="search-btn" href="">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </li>
+                    <li><a><i class="fa fa-home"></i></a>@Html.ActionLink("Trang chủ", "Index", "Home")</li>
+                    <li>
+                        <a><i class="fa fa-apple"></i></a>@Html.ActionLink("Apple", "Apple", "Home")
+                        <div class="sub-menu-1">
+                            <ul>
+                                <li><a href="ip12pm.html">Iphone 12</a></li>
+                                <li><a href="">Iphone 11</a></li>
+                                <li><a href="">Iphone SE</a></li>
+                                <li><a href="">Iphone X</a></li>
+                                <li><a href="">Iphone 8</a></li>
+                                <li><a href="">Iphone 7</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a><i class="fa fa-mobile"></i></a>@Html.ActionLink("Samsung", "Samsung", "Home")
+                        <div class="sub-menu-1">
+                            <ul>
+                                <li><a href="">Galaxy Fold</a></li>
+                                <li><a href="">Galaxy Z Flip</a></li>
+                                <li><a href="">Galaxy Note</a></li>
+                                <li><a href="">Galaxy S</a></li>
+                                <li><a href="">Galaxy A</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a><i class="fa fa-newspaper-o"></i></a>@Html.ActionLink("Tin tức", "tintuc", "Home")</li>
+                    <li><a><i class="fa fa-user"></i></a>@Html.ActionLink("Tài khoản", "Dangnhap", "Home")</li>
+                    <li><a><i class="fa fa-envelope-o"></i></a>@Html.ActionLink("Liên hệ", "lienhe", "Home")</li>
+                </ul>
+            </nav>
+            <a href=""> <img src="@Url.Content("~/images/favicon.ico")" width="30px" height="30px"></a>
+        </div>
+    </div>
+</div>
+
+<div class="small-container">
+    <h2 class="title">SamSung</h2>
+    <div class="row">
+        <div class="col-4">
+            <img src="@Url.Content("~/images/ss.png")" alt="">
+            <h4>Samsung Galaxy Note 20 Ultra 5G</h4>
+            <h3>22.990.000</h3>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <!-- <p>Màn hình: Dynamic AMOLED 2X, 6.9", Quad HD+ (2K+)</p>
+            <p>Hệ điều hành: Android 10</p>
+            <p>Camera sau: Chính 108 MP & Phụ 12 MP, 12 MP, cảm biến Laser AF</p>
+            <p>Camera trước: 10 MP</p>
+            <p>Chip: Exynos 990 8 nhân</p>
+            <p>Pin: 4500 mAh, Có sạc nhanh</p> -->
+        </div>
+        <div class="col-4">
+            <img src="@Url.Content("~/images/s21.png")" alt="">
+            <h4>Samsung Galaxy S21 Ultra 5G</h4>
+            <h3>28.990.000</h3>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <!-- <p>Màn hình: Dynamic AMOLED 2X, 6.8", Quad HD+ (2K+)</p>
+            <p>Hệ điều hành: Android 11</p>
+            <p>Camera sau: Chính 108 MP & Phụ 12 MP, 10 MP, 10 MP</p>
+            <p>Camera trước: 40 MP</p>
+            <p>CPU: Exynos 2100 8 nhân</p>
+            <p>Pin: 5000 mAh, có sạc nhanh</p> -->
+        </div>
+        <div class="col-4">
+            <img src="@Url.Content("~/images/products/sumsung/s20u.jpg")" alt="">
+            <h4>Samsung Galaxy S20 Ultra</h4>
+            <h3>20.790.000</h3>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <!-- <p>Màn hình: 6.9", QHD+, Dynamic AMOLED 2X, 1440 x 3200 Pixel</p>
+            <p>Hệ điều hành: Android 10</p>
+            <p>Camera sau: 108.0 MP + 12.0 MP + 48.0 MP + 0.5 MP</p>
+            <p>Camera trước: 40.0 MP</p>
+            <p>Chip: Exynos 990</p>
+            <p>Pin: 5000 mAh, có sạc nhanh</p> -->
+        </div>
+        <div class="col-4">
+            <img src="@Url.Content("~/images/products/sumsung/note10.jpg")" alt="">
+            <h4>Samsung Galaxy Note 10+</h4>
+            <h3>16.490.000</h3>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <!-- <p>Màn hình: Dynamic AMOLED, 6.8", Quad HD+ (2K+)</p>
+            <p>Hệ điều hành: Android 9 (Pie)</p>
+            <p>Camera sau: 	Chính 12 MP & Phụ 12 MP, 16 MP, TOF 3D</p>
+            <p>Camera trước: 10 MP</p>
+            <p>Chip: Exynos 9825</p>
+            <p>Pin: 4300mAh, có sạc nhanh</p> -->
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>INFORMATION</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Site Map</a></li>
+                </ul>
+            </div>
+            <div class="footer-col-2">
+                <img src=@Url.Content("~/images/imgf.png") alt="">
+                <p>Teklican - Bán điện thoại chính hãng</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>FOLLOW US</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Youtube</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

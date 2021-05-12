@@ -1,0 +1,458 @@
+﻿
+@{
+    ViewBag.Title = "Apple";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="headerA">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="@Url.Action("Index","Home")"> <img src="@Url.Content("~/images/LGN.png")" width="105px"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <div class="search-box">
+                            <input class="search-txt" type="text" name="" placeholder="Bạn muốn tìm gì?">
+                            <a class="search-btn" href="">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </li>
+                    <li><i class="fa fa-home"></i>@Html.ActionLink("Trang chủ", "Index", "Home")</li>
+                    <li>
+                        <a><i class="fa fa-apple"></i></a>@Html.ActionLink("Apple", "Apple", "Home")
+                        <div class="sub-menu-1">
+                            <ul>
+                                <li><a href="ip12pm.html">Iphone 12</a></li>
+                                <li><a href="">Iphone 11</a></li>
+                                <li><a href="">Iphone SE</a></li>
+                                <li><a href="">Iphone X</a></li>
+                                <li><a href="">Iphone 8</a></li>
+                                <li><a href="">Iphone 7</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a><i class="fa fa-mobile"></i></a>@Html.ActionLink("Samsung", "Samsung", "Home")
+                        <div class="sub-menu-1">
+                            <ul>
+                                <li><a href="">Galaxy Fold</a></li>
+                                <li><a href="">Galaxy Z Flip</a></li>
+                                <li><a href="">Galaxy Note</a></li>
+                                <li><a href="">Galaxy S</a></li>
+                                <li><a href="">Galaxy A</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a><i class="fa fa-newspaper-o"></i></a>@Html.ActionLink("Tin tức", "tintuc", "Home")</li>
+                    <li><a><i class="fa fa-user"></i></a>@Html.ActionLink("Tài khoản", "Dangnhap", "Home")</li>
+                    <li><a><i class="fa fa-envelope-o"></i></a>@Html.ActionLink("Liên hệ", "lienhe", "Home")</li>
+                </ul>
+            </nav>
+            <a href=""> <img src="@Url.Content("~/images/favicon.ico")" width="30px" height="30px"></a>
+        </div>
+    </div>
+</div>
+<!-- featured categories -->
+<!-- <div class="categories">
+        <h2 class="title">Sản phẩm mới nhất</h2>
+        <div class="row">
+        <div class="col-4">
+            <img src="images/products/iPhone/ip12pm.jpg" alt="">
+            <h4>Iphone 12 Promax</h4>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <p>Màn hình: 6.7", Super Retina XDR, AMOLED</p>
+            <p>Hệ điều hành: iOS</p>
+            <p>Camera sau: 3 camera 12 MP</p>
+            <p>Camera trước: 12 MP</p>
+            <p>Chip: Apple A14 Bionic</p>
+            <p>Pin: 3687mAh, có sạc nhanh</p>
+        </div>
+        <div class="col-4">
+            <img src="images/products/iPhone/iphone-12.png" alt="">
+            <h4>Iphone 12</h4>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <p>Màn hình: IPS LCD, 6.1", Liquid Retina</p>
+            <p>Hệ điều hành: iOS</p>
+            <p>Camera sau: 2 camera 12 MP</p>
+            <p>Camera trước: 12 MP</p>
+            <p>Chip: Apple A13 Bionic</p>
+            <p>Pin: 3110mAh, có sạc nhanh</p>
+        </div>
+        <div class="col-4">
+            <img src="images/products/iPhone/ip12mn.jpg" alt="">
+            <h4>Iphone 12 Mini</h4>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <p>Màn hình: OLED, 5.4", Super Retina XDR</p>
+            <p>Hệ điều hành: iOS</p>
+            <p>Camera sau: 2 camera 12 MP</p>
+            <p>Camera trước: 12 MP</p>
+            <p>Chip: Apple A14 Bionic</p>
+            <p>Pin: 2227mAh, có sạc nhanh</p>
+        </div>
+        <div class="col-4">
+            <img src="images/ss.png" alt="">
+            <h4>Samsung Galaxy Note 20 Ultra 5G</h4>
+        <div class="rating">
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+        </div>
+        <p>Màn hình: Dynamic AMOLED 2X, 6.9", Quad HD+ (2K+)</p>
+        <p>Hệ điều hành: Android 10</p>
+        <p>Camera sau: Chính 108 MP & Phụ 12 MP, 12 MP, cảm biến Laser AF</p>
+        <p>Camera trước: 10 MP</p>
+        <p>Chip: Exynos 990 8 nhân</p>
+        <p>Pin: 4500 mAh, Có sạc nhanh</p>
+        </div>
+        <div class="col-4">
+            <img src="images/s21.png">
+            <h4>Samsung Galaxy S21 Ultra 5G</h4>
+      <div class="rating">
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+        </div>
+        <p>Màn hình: Dynamic AMOLED 2X, 6.8", Quad HD+ (2K+)</p>
+        <p>Hệ điều hành: Android 11</p>
+        <p>Camera sau: Chính 108 MP & Phụ 12 MP, 10 MP, 10 MP</p>
+        <p>Camera trước: 40 MP</p>
+        <p>CPU: Exynos 2100 8 nhân</p>
+        <p>Pin: 5000 mAh, có sạc nhanh</p>
+        </div>
+    </div>
+</div> -->
+<!-- featured products -->
+<div class="small-container">
+    <h2 class="title">Apple</h2>
+    <div class="row">
+        <div class="col-4">
+            <img src=@Url.Content("~/images/products/iPhone/iphone1.jpeg") alt="">
+            <h4>Iphone 11 256Gb Quốc Tế</h4>
+            <h3>20.790.000</h3>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <p>Còn hàng</p>
+            <!-- <p>Màn hình: IPS LCD, 6.1", Liquid Retina</p>
+            <p>Hệ điều hành: iOS</p>
+            <p>Camera sau: 2 camera 12 MP</p>
+            <p>Camera trước: 12 MP</p>
+            <p>Chip: Apple A13 Bionic</p>
+            <p>Pin: 3110mAh, có sạc nhanh</p> -->
+
+        </div>
+        <div class="col-4">
+            <img src=@Url.Content("~/images/products/iPhone/iphone2.jpeg") alt="">
+            <h4>Iphone 11 Promax 256Gb Quốc Tế</h4>
+            <h3>27.590.000</h3>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <p>Còn hàng</p>
+            <!-- <p>Màn hình: 6.5", Super Retina XDR, Super AMOLED, 1242 x 2688 Pixel</p>
+            <p>Hệ điều hành: iOS</p>
+            <p>Camera sau: 	12.0 MP + 12.0 MP + 12.0 MP</p>
+            <p>Camera trước: 12 MP</p>
+            <p>Chip: Apple A13 Bionic</p>
+            <p>Pin: 3969mAh, có sạc nhanh</p> -->
+
+        </div>
+        <div class="col-4">
+            <img src=@Url.Content("~/images/xsm.png") alt="">
+            <h4>Iphone XSMax 256Gb Quốc Tế</h4>
+            <h3>18.990.000</h3>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <p>Còn hàng</p>
+            <!-- <p>Màn hình: 6.5", Super Retina HD, Super AMOLED, 1242 x 2688 Pixel</p>
+            <p>Hệ điều hành: iOS</p>
+            <p>Camera sau: 2 camera 12 MP</p>
+            <p>Camera trước: 7 MP</p>
+            <p>Chip: Apple A12 Bionic</p>
+            <p>Pin: 3174mAh, có sạc nhanh</p> -->
+        </div>
+        <div class="col-4">
+            <img src=@Url.Content("~/images/products/iPhone/ip12pm.jpg") alt="">
+            <h4>Iphone 12 Promax 256Gb Quốc Tế</h4>
+            <h3>29.590.000</h3>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <p>Còn hàng</p>
+            <!-- <p>Màn hình: 6.7", Super Retina XDR, AMOLED</p>
+            <p>Hệ điều hành: iOS</p>
+            <p>Camera sau: 3 camera 12 MP</p>
+            <p>Camera trước: 12 MP</p>
+            <p>Chip: Apple A14 Bionic</p>
+            <p>Pin: 3687mAh, có sạc nhanh</p> -->
+        </div>
+        <div class="col-4">
+            <img src=@Url.Content("~/images/products/iPhone/ip7p.png") alt="">
+            <h4>Iphone 7 Plus 128GB VN/A</h4>
+            <h3>8.290.000</h3>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <p>Còn hàng</p>
+            <!-- <p>Màn hình: LED-backlit IPS LCD, 5.5", Retina HD</p>
+            <p>Hệ điều hành: iOS</p>
+            <p>Camera sau: 2 camera 12 MP</p>
+            <p>Camera trước: 7 MP</p>
+            <p>Chip: Apple A10 Fusion 4 nhân</p>
+            <p>Pin: 2900mAh</p> -->
+        </div>
+        <div class="col-4">
+            <img src=@Url.Content("~/images/products/iPhone/ip8p.jpg") alt="">
+            <h4>Iphone 8 Plus 128GB VN/A</h4>
+            <h3>10.290.000</h3>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <p>Còn hàng</p>
+            <!-- <p>Màn hình: LED-backlit IPS LCD, 5.5", Retina HD</p>
+            <p>Hệ điều hành: iOS</p>
+            <p>Camera sau: 2 camera 12 MP</p>
+            <p>Camera trước: 7 MP</p>
+            <p>Chip: Apple A11 Bionic 6 nhân</p>
+            <p>Pin: 2691mAh, có sạc nhanh</p> -->
+        </div>
+    </div>
+</div>
+<!-- <h2 class="title">SamSung</h2>
+    <div class="row">
+    <div class="col-4">
+        <img src="images/ss.png" alt="">
+        <h4>Samsung Galaxy Note 20 Ultra 5G</h4>
+        <div class="rating">
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+        </div>
+        <p>Màn hình: Dynamic AMOLED 2X, 6.9", Quad HD+ (2K+)</p>
+        <p>Hệ điều hành: Android 10</p>
+        <p>Camera sau: Chính 108 MP & Phụ 12 MP, 12 MP, cảm biến Laser AF</p>
+        <p>Camera trước: 10 MP</p>
+        <p>Chip: Exynos 990 8 nhân</p>
+        <p>Pin: 4500 mAh, Có sạc nhanh</p>
+    </div>
+    <div class="col-4">
+        <img src="images/s21.png" alt="">
+        <h4>Samsung Galaxy S21 Ultra 5G</h4>
+      <div class="rating">
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+        </div>
+        <p>Màn hình: Dynamic AMOLED 2X, 6.8", Quad HD+ (2K+)</p>
+        <p>Hệ điều hành: Android 11</p>
+        <p>Camera sau: Chính 108 MP & Phụ 12 MP, 10 MP, 10 MP</p>
+        <p>Camera trước: 40 MP</p>
+        <p>CPU: Exynos 2100 8 nhân</p>
+        <p>Pin: 5000 mAh, có sạc nhanh</p>
+        </div>
+        <div class="col-4">
+            <img src="images/products/sumsung/s20u.jpg" alt="">
+            <h4>Samsung Galaxy S20 Ultra</h4>
+          <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <p>Màn hình: 6.9", QHD+, Dynamic AMOLED 2X, 1440 x 3200 Pixel</p>
+            <p>Hệ điều hành: Android 10</p>
+            <p>Camera sau: 108.0 MP + 12.0 MP + 48.0 MP + 0.5 MP</p>
+            <p>Camera trước: 40.0 MP</p>
+            <p>Chip: Exynos 990</p>
+            <p>Pin: 5000 mAh, có sạc nhanh</p>
+            </div>
+            <div class="col-4">
+                <img src="images/products/sumsung/note10.jpg" alt="">
+                <h4>Samsung Galaxy Note 10+</h4>
+              <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                </div>
+                <p>Màn hình: Dynamic AMOLED, 6.8", Quad HD+ (2K+)</p>
+                <p>Hệ điều hành: Android 9 (Pie)</p>
+                <p>Camera sau: 	Chính 12 MP & Phụ 12 MP, 16 MP, TOF 3D</p>
+                <p>Camera trước: 10 MP</p>
+                <p>Chip: Exynos 9825</p>
+                <p>Pin: 4300mAh, có sạc nhanh</p>
+                </div>
+    </div>
+</div> -->
+<!-- offer -->
+<!-- <div class="offer">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-2">
+                <img src="images/zf2.jpg" class="offer-img">
+            </div>
+            <div class="col-2">
+                <p>Sản phẩm độc quyền tại Teklican</p>
+                <h2>Điện thoại Samsung Galaxy Z Fold 2 5G</h2>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                </div>
+                <p>Màn hình: Chính: Dynamic AMOLED, Phụ: Super AMOLED, Chính 7.59" & Phụ 6.23", Full HD+</p>
+                <p>Hệ điều hành: Android 10</p>
+                <p>Camera sau: 3 camera 12 MP</p>
+                <p>Camera trước: Trong 10 MP & Ngoài 10 MP</p>
+                <p>CPU:	Snapdragon 865+ 8 nhân</p>
+                <p>RAM:	12 GB</p>
+                <p>Bộ nhớ trong: 256 GB</p>
+                <p>Thẻ SIM:	1 Nano SIM & 1 eSIM, Hỗ trợ 5G</p>
+                <p>Dung lượng pin: 4500 mAh, có sạc nhanh</p>
+                <a href="" class="btn">Mua ngay &#8594;</a>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- testimanial -->
+<!-- <div class="testimonial">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae fuga hic nesciunt tempore
+                    quibusdam consequatur eligendi unde officia ex quae.ipsum dolor sit amet consectetur adipisicing
+                    elit. Recusandae fuga hic nesciunt tempore
+                    quibusdam consequatur eligendi unde officia ex quae.</p>
+                    <div class="rating">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <img class="img" src="images/user-1.png" alt="">
+                    <h3>Sean Parker</h3>
+            </div>
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae fuga hic nesciunt tempore
+                    quibusdam consequatur eligendi unde officia ex quae.ipsum dolor sit amet consectetur adipisicing
+                    elit. Recusandae fuga hic nesciunt tempore
+                    quibusdam consequatur eligendi unde officia ex quae.</p>
+                    <div class="rating">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <img class="img" src="images/user-2.png" alt="">
+                    <h3>Mike Smith</h3>
+            </div>
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae fuga hic nesciunt tempore
+                    quibusdam consequatur eligendi unde officia ex quae.ipsum dolor sit amet consectetur adipisicing
+                    elit. Recusandae fuga hic nesciunt tempore
+                    quibusdam consequatur eligendi unde officia ex quae.</p>
+                    <div class="rating">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <img class="img" src="images/user-3.png" alt="">
+                    <h3>Mabel Joe</h3>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- footer -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>INFORMATION</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Site Map</a></li>
+                </ul>
+            </div>
+            <div class="footer-col-2">
+                <img src=@Url.Content("~/images/imgf.png") alt="">
+                <p>Teklican - Bán điện thoại chính hãng</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>FOLLOW US</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Youtube</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
