@@ -1,0 +1,208 @@
+﻿@model Teklican.Models.Entities.Product
+
+@{
+    ViewBag.Title = "Details";
+    
+        ViewBag.Title = "Home Page";
+        Teklican.Models.ModelView.AccountView prof = null;
+        if (Session["username"] != null) { prof = (Teklican.Models.ModelView.AccountView)Session["username"]; } 
+}
+<div class="headerA">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="@Url.Action("Index","Home")"> <img src="@Url.Content("~/images/LGN.png")" width="105px"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <div class="search-box">
+                            <input class="search-txt" type="text" name="" placeholder="Bạn muốn tìm gì?">
+                            <a class="search-btn" href="">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </li>
+                    <li><a><i class="fa fa-home"></i></a>@Html.ActionLink("Trang chủ", "Index", "Home")</li>
+                    <li>
+                        <a><i class="fa fa-mobile"></i></i></a>@Html.ActionLink("Sản phẩm", "Product", "Home")
+                        <div class="sub-menu-1">
+                            <ul>
+                                <li>@Html.ActionLink("Apple", "Apple")</li>
+                                <li>@Html.ActionLink("Samsung", "Samsung")</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a><i class="fa fa-newspaper-o"></i></a>@Html.ActionLink("Tin tức", "tintuc", "Home")</li>
+                    <li>
+                        @if (Session["username"] != null)
+                        {
+                            <a><i class="fa fa-user"></i></a>@Html.ActionLink(prof.username, "Dangnhap", "Home")
+                            <div class="sub-menu-1">
+                                <ul>
+                                    <li><a href="@Url.Action("UserProfile")">Thông tin</a></li>
+                                    <li><a href="@Url.Action("Changepwd")">Đổi mật khẩu</a></li>
+                                    <li><a href="@Url.Action("Logout")">Đăng xuất</a></li>
+                                </ul>
+                            </div>
+                        }
+                        else
+                        {
+                            <a><i class="fa fa-user"></i></a>
+                            @Html.ActionLink("Đăng nhập", "Dangnhap", "Home")
+                        }
+                    </li>
+                    <li><a><i class="fa fa-envelope-o"></i></a>@Html.ActionLink("Liên hệ", "lienhe", "Home")</li>
+                </ul>
+            </nav>
+            <a href=""> <img src="@Url.Content("~/images/favicon.ico")" width="30px" height="30px"></a>
+        </div>
+    </div>
+</div>
+<div class="small-container single-product">
+    <div class="rowp">
+        <div class="col-2">
+            <img src="~/images/products/@Html.DisplayFor(model => model.img)" id="ProductImg">
+            <div class="small-img-row">
+                <div class="small-img-col">
+                    <img src="~/images/products/iPhone/ip12pm.jpg" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="~/images/products/iPhone/12pmt-.png" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="~/images/products/iPhone/12pmd.png" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="~/images/products/iPhone/12pmg.png" class="small-img">
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <p>Trang chủ</p>
+            <h1>@Html.DisplayFor(model => model.name)</h1>
+            <span class="price-old">33.990.000</span>
+            <h4>@Html.DisplayFor(model => model.price)</h4>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <p>@Html.DisplayFor(model => model.description)</p>
+            <select>
+                <option>Màu sắc</option>
+                <option>Blue</option>
+                <option>Trắng</option>
+                <option>Đen</option>
+                <option>Gold</option>
+
+            </select>
+            <input type="number" value="1">
+            <a href="" class="btn">Thêm vào giỏ hàng</a>
+        </div>
+    </div>
+</div>
+<!-- title -->
+<div class="small-container">
+    <div class="row row-2" style="justify-content: space-between;">
+        <h3 style="margin: 10px;">Sản phẩm liên quan</h3>
+        <a href="Apple.html"><p style="color: brown;">Xem thêm</p></a>
+    </div>
+</div>
+
+
+
+
+<div class="small-container">
+    <div class="row">
+        @if (Session["listProduct"] != null)
+        {
+            var listproduct = (List<Teklican.Models.ModelView.ProductView>)Session["listProduct"];
+            foreach (var item in listproduct)
+            {
+                if (item.nameType == "Apple")
+                {
+                    if (item.id_Product < 7)
+                    {
+                        <div class="col-4">
+                            <a href="@Url.Action("Details", "Home", new { id = item.id_Product })">
+                                <img src="~/images/products/@item.img" alt="">
+                            </a>
+                            <h4><a href="@Url.Action("Details", "Home", new { id = item.id_Product })">@item.name</a></h4>
+                            <h3>@item.price</h3>
+                            <div class="rating">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </div>
+                            @if (item.status == true)
+                            {
+                                <p>Còn hàng</p>
+                            }
+                            else
+                            {
+                                <p>Hết hàng</p>
+                            }
+                        </div>
+                    }
+                }
+            }
+        }
+    </div>
+</div>
+
+
+<!-- ---footer----- -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>INFORMATION</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Site Map</a></li>
+                </ul>
+            </div>
+            <div class="footer-col-2">
+                <img src="images/imgf.png" alt="">
+                <p>Teklican - Bán điện thoại chính hãng</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>FOLLOW US</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Youtube</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    var ProductImg = document.getElementById("ProductImg");
+    var SmallImg = document.getElementsByClassName("small-img");
+
+    SmallImg[0].onclick = function () {
+        ProductImg.src = SmallImg[0].src;
+    }
+    SmallImg[1].onclick = function () {
+        ProductImg.src = SmallImg[1].src;
+    }
+    SmallImg[2].onclick = function () {
+        ProductImg.src = SmallImg[2].src;
+    }
+    SmallImg[3].onclick = function () {
+        ProductImg.src = SmallImg[3].src;   
+    }
+</script>
+
