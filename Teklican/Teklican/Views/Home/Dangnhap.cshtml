@@ -1,0 +1,147 @@
+﻿
+@{
+    ViewBag.Title = "Đăng nhập";
+    Layout = "~/Views/Shared/LayoutLogin.cshtml";
+}
+<div class="cont">
+    <form action="" method="post">
+        <div class="form sign-in">
+            <h2>Teklican</h2>
+            <label class="lb-ln">
+                <span>Tên tài khoản</span>
+
+                <input type="text" name="uname" id="login_username" >
+            </label>
+            <label class="lb-ln">
+                <span>Mật khẩu</span>
+                <input type="password" name="password" id="login_password">
+            </label>
+            <button class="submit" type="button" id="login">Đăng nhập</button>
+            <p class="forgot-pass">Quên mật khẩu ?</p>
+
+            <div class="social-media">
+                <ul>
+                    <li><img src="../images/facebook.png"></li>
+                    <li><img src="../images/twitter.png"></li>
+                    <li><img src="../images/linkedin.png"></li>
+                    <li><img src="../images/instagram.png"></li>
+                </ul>
+            </div>
+        </div>
+    </form>
+
+
+    <div class="sub-cont">
+        <div class="img">
+            <div class="img-text m-up">
+                <h2>Chưa có tài khoản ?</h2>
+                <p>Đăng ký để nhận thêm nhiều ưu đãi!</p>
+            </div>
+            <div class="img-text m-in">
+                <h2>Bạn đã có tài khoản?</h2>
+                <p>Đăng nhập ngay!</p>
+            </div>
+            <div class="img-btn">
+                <span class="m-up">Đăng ký</span>
+                <span class="m-in">Đăng nhập</span>
+            </div>
+        </div>
+        <form action="" method="post">
+            <div class="form sign-up">
+                <h2>Đăng ký</h2>
+                <label>
+                    <span>Tên</span>
+                    <input type="text" name="username" id="regis_username" maxlength="25">
+                </label>
+                <label>
+                    <span>Địa chỉ</span>
+                    <input type="text" name="address" id="regis_address">
+                </label>
+                <label>
+                    <span>Số điện thoại</span>
+                    <input type="number" name="phone" id="regis_phone">
+                </label>
+                <label>
+                    <span>Email</span>
+                    <input type="email" name="email" id="regis_email">
+                </label>
+                <label>
+                    <span>Mật khẩu</span>
+                    <input type="password" name="password" id="regis_password">
+                </label>
+                <label>
+                    <span>Nhập lại mật khẩu</span>
+                    <input type="password" name="repass" id="regis_repass">
+                </label>
+                <button type="button"  id="register" class="submit">Đăng ký ngay</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="">
+    document.querySelector('.img-btn').addEventListener('click', function () {
+        document.querySelector('.cont').classList.toggle('s-signup')
+    }
+    );
+    $('#register').click(function () {
+        var username = $('#regis_username').val();
+        var pass = $('#regis_password').val();
+        var repass = $('#regis_repass').val();
+        var address = $('#regis_address').val();
+        var email = $('#regis_email').val();
+        var phone = $('#regis_phone').val();
+        if (username != "" && pass != "" && repass != "" && address != "" && phone != "" && email != "") {
+            if (pass == repass) {
+                $.ajax({
+                    method: 'post',
+                    url: '@Url.Action("Register")',
+                    data: {
+                        username: username, pass: pass, address: address, phone: phone, email: email
+                    }
+                }).done(function (data) {
+                    if (data == "success") {
+                        alert("Success");
+                        $('.img-btn').click();
+                        $('#regis_username').val("");
+                        $('#regis_password').val("");
+                        $('#regis_repass').val("");
+                        $('#regis_address').val("");
+                        $('#regis_email').val("");
+                        $('#regis_phone').val("");
+                    } else if (data == "fail") {
+                        alert("Regis Fail!!");
+                    } else {
+                        alert(data);
+                    }
+                });
+            } else {
+                alert("repass incorrect!!");
+            }
+        } else {
+            alert("Please enter full information!!");
+        }
+
+    })
+    $('#login').click(function () {
+        var username = $('#login_username').val();
+        var pass = $('#login_password').val();
+        $.ajax({
+             method: 'post',
+            url: '@Url.Action("Login")',
+            data: {
+                uname: username,
+                password: pass
+            }
+        }).done(function (data) {
+            if (data == "Fail") {
+                alert("Username or password incorrect!!");
+            } else if (data == "Admin") {
+                alert("Login Success");
+                window.location.href = "tintuc";
+            } else {
+                alert("Login Success");
+                window.location.href = "Index";
+            }
+        });
+    })
+</script>
