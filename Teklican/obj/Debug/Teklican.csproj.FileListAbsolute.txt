@@ -1,0 +1,415 @@
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\Teklican.dll.config
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\Teklican.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\Teklican.pdb
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\csc.exe
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\csc.exe.config
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\csc.rsp
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\csi.exe
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\csi.exe.config
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\csi.rsp
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.AppContext.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.Console.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.IO.Compression.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.Net.Http.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.ValueTuple.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\vbc.exe
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\vbc.exe.config
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\vbc.rsp
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\VBCSCompiler.exe
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\Antlr3.Runtime.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\Newtonsoft.Json.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\System.Web.Helpers.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\System.Web.Mvc.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\System.Web.Optimization.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\System.Web.Razor.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\System.Web.WebPages.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\System.Web.WebPages.Razor.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\WebGrease.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\System.Web.Helpers.xml
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\System.Web.Mvc.xml
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\System.Web.Optimization.xml
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\System.Web.Razor.xml
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\System.Web.WebPages.xml
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\System.Web.WebPages.Razor.xml
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\Newtonsoft.Json.xml
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\Antlr3.Runtime.pdb
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Admin\source\repos\Teklican\Teklican\obj\Debug\Teklican.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Teklican\Teklican\obj\Debug\Teklican.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Teklican\Teklican\obj\Debug\Teklican.csproj.CopyComplete
+C:\Users\Admin\source\repos\Teklican\Teklican\obj\Debug\Teklican.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\obj\Debug\Teklican.pdb
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\EntityFramework.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\EntityFramework.SqlServer.dll
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\EntityFramework.xml
+C:\Users\Admin\source\repos\Teklican\Teklican\bin\EntityFramework.SqlServer.xml
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\Teklican.dll.config
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\Teklican.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\Teklican.pdb
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\csc.exe
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\csc.exe.config
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\csc.rsp
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\csi.exe
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\csi.exe.config
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\csi.rsp
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.AppContext.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.Console.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.IO.Compression.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.Net.Http.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.Net.Sockets.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.ValueTuple.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.Xml.XPath.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\vbc.exe
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\vbc.exe.config
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\vbc.rsp
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\VBCSCompiler.exe
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\Antlr3.Runtime.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\EntityFramework.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\EntityFramework.SqlServer.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\Newtonsoft.Json.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\System.Web.Helpers.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\System.Web.Mvc.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\System.Web.Optimization.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\System.Web.Razor.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\System.Web.WebPages.Deployment.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\System.Web.WebPages.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\System.Web.WebPages.Razor.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\WebGrease.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\EntityFramework.xml
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\EntityFramework.SqlServer.xml
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\System.Web.Helpers.xml
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\System.Web.Mvc.xml
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\System.Web.Optimization.xml
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\System.Web.Razor.xml
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\System.Web.WebPages.xml
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\System.Web.WebPages.Deployment.xml
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\System.Web.WebPages.Razor.xml
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\Newtonsoft.Json.xml
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\Antlr3.Runtime.pdb
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\obj\Debug\Teklican.csprojAssemblyReference.cache
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\obj\Debug\Teklican.csproj.CoreCompileInputs.cache
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\obj\Debug\Teklican.csproj.CopyComplete
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\obj\Debug\Teklican.dll
+C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Teklican\obj\Debug\Teklican.pdb
+D:\Project_Teklican\Teklican\Teklican\bin\Teklican.dll.config
+D:\Project_Teklican\Teklican\Teklican\bin\Teklican.dll
+D:\Project_Teklican\Teklican\Teklican\bin\Teklican.pdb
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\csc.exe
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\csc.exe.config
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\csc.rsp
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\csi.exe
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\csi.exe.config
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\csi.rsp
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.AppContext.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.Collections.Immutable.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.Console.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.Globalization.Calendars.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.IO.Compression.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.IO.FileSystem.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.Net.Http.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.Net.Sockets.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.Reflection.Metadata.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.ValueTuple.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.Xml.XPath.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\vbc.exe
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\vbc.exe.config
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\vbc.rsp
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\VBCSCompiler.exe
+D:\Project_Teklican\Teklican\Teklican\bin\roslyn\VBCSCompiler.exe.config
+D:\Project_Teklican\Teklican\Teklican\bin\Antlr3.Runtime.dll
+D:\Project_Teklican\Teklican\Teklican\bin\EntityFramework.dll
+D:\Project_Teklican\Teklican\Teklican\bin\EntityFramework.SqlServer.dll
+D:\Project_Teklican\Teklican\Teklican\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Project_Teklican\Teklican\Teklican\bin\Microsoft.Web.Infrastructure.dll
+D:\Project_Teklican\Teklican\Teklican\bin\Newtonsoft.Json.dll
+D:\Project_Teklican\Teklican\Teklican\bin\System.Web.Helpers.dll
+D:\Project_Teklican\Teklican\Teklican\bin\System.Web.Mvc.dll
+D:\Project_Teklican\Teklican\Teklican\bin\System.Web.Optimization.dll
+D:\Project_Teklican\Teklican\Teklican\bin\System.Web.Razor.dll
+D:\Project_Teklican\Teklican\Teklican\bin\System.Web.WebPages.Deployment.dll
+D:\Project_Teklican\Teklican\Teklican\bin\System.Web.WebPages.dll
+D:\Project_Teklican\Teklican\Teklican\bin\System.Web.WebPages.Razor.dll
+D:\Project_Teklican\Teklican\Teklican\bin\WebGrease.dll
+D:\Project_Teklican\Teklican\Teklican\bin\EntityFramework.xml
+D:\Project_Teklican\Teklican\Teklican\bin\EntityFramework.SqlServer.xml
+D:\Project_Teklican\Teklican\Teklican\bin\System.Web.Helpers.xml
+D:\Project_Teklican\Teklican\Teklican\bin\System.Web.Mvc.xml
+D:\Project_Teklican\Teklican\Teklican\bin\System.Web.Optimization.xml
+D:\Project_Teklican\Teklican\Teklican\bin\System.Web.Razor.xml
+D:\Project_Teklican\Teklican\Teklican\bin\System.Web.WebPages.xml
+D:\Project_Teklican\Teklican\Teklican\bin\System.Web.WebPages.Deployment.xml
+D:\Project_Teklican\Teklican\Teklican\bin\System.Web.WebPages.Razor.xml
+D:\Project_Teklican\Teklican\Teklican\bin\Newtonsoft.Json.xml
+D:\Project_Teklican\Teklican\Teklican\bin\Antlr3.Runtime.pdb
+D:\Project_Teklican\Teklican\Teklican\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Project_Teklican\Teklican\Teklican\obj\Debug\Teklican.csprojAssemblyReference.cache
+D:\Project_Teklican\Teklican\Teklican\obj\Debug\Teklican.csproj.CoreCompileInputs.cache
+D:\Project_Teklican\Teklican\Teklican\obj\Debug\Teklican.csproj.CopyComplete
+D:\Project_Teklican\Teklican\Teklican\obj\Debug\Teklican.dll
+D:\Project_Teklican\Teklican\Teklican\obj\Debug\Teklican.pdb
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\Teklican.dll.config
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\Teklican.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\Teklican.pdb
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\csc.exe
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\csc.exe.config
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\csc.rsp
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\csi.exe
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\csi.exe.config
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\csi.rsp
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.AppContext.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.Console.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.IO.Compression.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.Net.Http.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.Net.Sockets.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.ValueTuple.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.Xml.XPath.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\vbc.exe
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\vbc.exe.config
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\vbc.rsp
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\VBCSCompiler.exe
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\Antlr3.Runtime.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\EntityFramework.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\EntityFramework.SqlServer.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\Newtonsoft.Json.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\System.Web.Helpers.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\System.Web.Mvc.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\System.Web.Optimization.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\System.Web.Razor.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\System.Web.WebPages.Deployment.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\System.Web.WebPages.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\System.Web.WebPages.Razor.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\WebGrease.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\EntityFramework.xml
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\EntityFramework.SqlServer.xml
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\System.Web.Helpers.xml
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\System.Web.Mvc.xml
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\System.Web.Optimization.xml
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\System.Web.Razor.xml
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\System.Web.WebPages.xml
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\System.Web.WebPages.Deployment.xml
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\System.Web.WebPages.Razor.xml
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\Newtonsoft.Json.xml
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\Antlr3.Runtime.pdb
+C:\Users\tienb\Downloads\Teklican\Teklican\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\tienb\Downloads\Teklican\Teklican\obj\Debug\Teklican.csproj.CoreCompileInputs.cache
+C:\Users\tienb\Downloads\Teklican\Teklican\obj\Debug\Teklican.csproj.CopyComplete
+C:\Users\tienb\Downloads\Teklican\Teklican\obj\Debug\Teklican.dll
+C:\Users\tienb\Downloads\Teklican\Teklican\obj\Debug\Teklican.pdb
+C:\Users\tienb\Downloads\Teklican\Teklican\obj\Debug\Teklican.csprojAssemblyReference.cache
+D:\Test3\Teklican\Teklican\bin\Teklican.dll.config
+D:\Test3\Teklican\Teklican\bin\Teklican.dll
+D:\Test3\Teklican\Teklican\bin\Teklican.pdb
+D:\Test3\Teklican\Teklican\bin\roslyn\csc.exe
+D:\Test3\Teklican\Teklican\bin\roslyn\csc.exe.config
+D:\Test3\Teklican\Teklican\bin\roslyn\csc.rsp
+D:\Test3\Teklican\Teklican\bin\roslyn\csi.exe
+D:\Test3\Teklican\Teklican\bin\roslyn\csi.exe.config
+D:\Test3\Teklican\Teklican\bin\roslyn\csi.rsp
+D:\Test3\Teklican\Teklican\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Test3\Teklican\Teklican\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Test3\Teklican\Teklican\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Test3\Teklican\Teklican\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.AppContext.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.Collections.Immutable.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.Console.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.Globalization.Calendars.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.IO.Compression.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.IO.FileSystem.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.Net.Http.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.Net.Sockets.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.Reflection.Metadata.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.ValueTuple.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.Xml.XPath.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Test3\Teklican\Teklican\bin\roslyn\vbc.exe
+D:\Test3\Teklican\Teklican\bin\roslyn\vbc.exe.config
+D:\Test3\Teklican\Teklican\bin\roslyn\vbc.rsp
+D:\Test3\Teklican\Teklican\bin\roslyn\VBCSCompiler.exe
+D:\Test3\Teklican\Teklican\bin\roslyn\VBCSCompiler.exe.config
+D:\Test3\Teklican\Teklican\bin\Antlr3.Runtime.dll
+D:\Test3\Teklican\Teklican\bin\EntityFramework.dll
+D:\Test3\Teklican\Teklican\bin\EntityFramework.SqlServer.dll
+D:\Test3\Teklican\Teklican\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Test3\Teklican\Teklican\bin\Microsoft.Web.Infrastructure.dll
+D:\Test3\Teklican\Teklican\bin\Newtonsoft.Json.dll
+D:\Test3\Teklican\Teklican\bin\System.Web.Helpers.dll
+D:\Test3\Teklican\Teklican\bin\System.Web.Mvc.dll
+D:\Test3\Teklican\Teklican\bin\System.Web.Optimization.dll
+D:\Test3\Teklican\Teklican\bin\System.Web.Razor.dll
+D:\Test3\Teklican\Teklican\bin\System.Web.WebPages.Deployment.dll
+D:\Test3\Teklican\Teklican\bin\System.Web.WebPages.dll
+D:\Test3\Teklican\Teklican\bin\System.Web.WebPages.Razor.dll
+D:\Test3\Teklican\Teklican\bin\WebGrease.dll
+D:\Test3\Teklican\Teklican\bin\EntityFramework.xml
+D:\Test3\Teklican\Teklican\bin\EntityFramework.SqlServer.xml
+D:\Test3\Teklican\Teklican\bin\System.Web.Helpers.xml
+D:\Test3\Teklican\Teklican\bin\System.Web.Mvc.xml
+D:\Test3\Teklican\Teklican\bin\System.Web.Optimization.xml
+D:\Test3\Teklican\Teklican\bin\System.Web.Razor.xml
+D:\Test3\Teklican\Teklican\bin\System.Web.WebPages.xml
+D:\Test3\Teklican\Teklican\bin\System.Web.WebPages.Deployment.xml
+D:\Test3\Teklican\Teklican\bin\System.Web.WebPages.Razor.xml
+D:\Test3\Teklican\Teklican\bin\Newtonsoft.Json.xml
+D:\Test3\Teklican\Teklican\bin\Antlr3.Runtime.pdb
+D:\Test3\Teklican\Teklican\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Test3\Teklican\Teklican\obj\Debug\Teklican.csprojAssemblyReference.cache
+D:\Test3\Teklican\Teklican\obj\Debug\Teklican.csproj.CoreCompileInputs.cache
+D:\Test3\Teklican\Teklican\obj\Debug\Teklican.csproj.CopyComplete
+D:\Test3\Teklican\Teklican\obj\Debug\Teklican.dll
+D:\Test3\Teklican\Teklican\obj\Debug\Teklican.pdb

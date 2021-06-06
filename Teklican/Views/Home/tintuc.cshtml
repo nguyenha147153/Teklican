@@ -1,0 +1,138 @@
+﻿
+@{
+    ViewBag.Title = "Tin tức";
+    Teklican.Models.ModelView.CustomerView prof = null;
+    if (Session["username"] != null) { prof = (Teklican.Models.ModelView.CustomerView)Session["username"]; }
+}
+
+<div class="headerA">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="@Url.Action("Index","Home")"> <img src="@Url.Content("~/images/LGN.png")" width="105px"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a><i class="fa fa-home"></i></a>@Html.ActionLink("Trang chủ", "Index", "Home")</li>
+                    <li>
+                        <a><i class="fa fa-mobile"></i></i></a>@Html.ActionLink("Sản phẩm", "Product", "Home")
+                        <div class="sub-menu-1">
+                            <ul>
+                                <li>@Html.ActionLink("Apple", "Apple")</li>
+                                <li>@Html.ActionLink("Samsung", "Samsung")</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a><i class="fa fa-newspaper-o"></i></a>@Html.ActionLink("Tin tức", "tintuc", "Home")</li>
+                    <li>
+                        @if (Session["username"] != null)
+                        {
+            <a><i class="fa fa-user"></i></a>@Html.ActionLink(prof.Fullname, "Dangnhap", "Home")
+                            <div class="sub-menu-1">
+                                <ul>
+                                    <li><a href="@Url.Action("UserProfile")">Thông tin</a></li>
+                                    <li><a href="@Url.Action("Changepwd")">Đổi mật khẩu</a></li>
+                                    <li><a href="@Url.Action("Logout")">Đăng xuất</a></li>
+                                </ul>
+                            </div> }
+                                        else
+                                        {
+                            <a><i class="fa fa-user"></i></a>
+                                            @Html.ActionLink("Đăng nhập", "Dangnhap", "Home")}
+                    </li>
+                    <li><a><i class="fa fa-envelope-o"></i></a>@Html.ActionLink("Liên hệ", "lienhe", "Home")</li>
+                </ul>
+            </nav>
+            <a href="@Url.Action("giohang", "Home")"> <img src="@Url.Content("~/images/favicon.ico")" width="30px" height="30px"></a>
+        </div>
+    </div>
+</div>
+<div class="wrapper">
+    <div class="blog">
+        <div class="single-blog">
+            <div class="blog-img">
+                <img src="@Url.Content("~/images/imgb1.jpg")" alt="">
+                <a href="">Apple</a>
+            </div>
+
+            <div class="blog-content">
+                <h4>Apple thay đổi chính sách bảo hành tại Việt Nam</h4>
+                <p>
+                    Người dùng iPhone 12 sẽ được sửa chữa các bộ phận bị hỏng thay vì đổi máy mới như trước.
+                    Chính sách mới của Apple được áp dụng từ 23/4 tại các trung tâm bảo hành ủy quyền (AASP) cho toàn bộ dòng iPhone 12 gồm iPhone 12 mini, iPhone 12, 12 Pro và 12 Pro Max. Những thiết bị này sẽ được bảo hành dưới dạng kiểm tra, thay thế linh kiện gặp sự cố thay vì đổi máy mới hoàn toàn.
+                </p>
+                <a href="https://zingnews.vn/apple-thay-doi-chinh-sach-bao-hanh-tai-viet-nam-post1208787.html" target="_blank">Đọc thêm <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div class="single-blog">
+            <div class="blog-img">
+                <img src="@Url.Content("~/images/imgb2.jpg")" alt="">
+                <a href="">SamSung</a>
+            </div>
+
+            <div class="blog-content">
+                <h4>Điện thoại Samsung pin lớn, màn hình 90 Hz, giá 3,5 triệu đồng</h4>
+                <p>
+                    Galaxy M12 có viên pin 5.000 mAh, màn hình tần số quét 90 Hz. Tuy nhiên, máy vẫn dùng thiết kế màn hình khuyết đỉnh hình chữ U.
+                    Ngày 27/4, Samsung đã giới thiệu Galaxy M12 tại thị trường Việt Nam. Đây là phiên bản nâng cấp của mẫu Galaxy M11 (ra mắt vào tháng 5/2020). So với phiên bản tiền nhiệm, smartphone mới của Samsung chủ yếu được nâng cấp về cấu hình, camera và tần số quét cao hơn.
+                </p>
+                <a href="https://zingnews.vn/dien-thoai-samsung-pin-lon-man-hinh-90-hz-gia-3-5-trieu-dong-post1208861.html " target="_blank">Đọc thêm <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div class="single-blog">
+            <div class="blog-img">
+                <img src="@Url.Content("~/images/imgb3.jpg")" alt="">
+                <a href="">SamSung</a>
+            </div>
+
+            <div class="blog-content">
+                <h4>Samsung đang phát triển chiếc tablet độc đáo nhất</h4>
+                <p>
+                    Bên cạnh smartphone, Samsung đang phát triển mẫu tablet màn hình gập để ra mắt trước Apple.
+                    Theo Gizmochina, Samsung đang phát triển mẫu tablet có màn hình gập thành 3 phần với tên Galaxy Z Fold Tab. Thiết bị dự kiến được ra mắt trong quý I/2022, không phải 2021 như một số nguồn tin trước đây dự đoán.
+
+                    Bên cạnh khả năng gập thành 3 phần, Galaxy Z Fold Tab cũng hỗ trợ bút cảm ứng S Pen, tương tự mẫu Galaxy Z Fold3 dự kiến ra mắt trong tháng 7-8. Chưa rõ bút cảm ứng này có Bluetooth tương tự dòng Galaxy Note hay không.
+                </p>
+                <a href="https://zingnews.vn/samsung-dang-phat-trien-chiec-tablet-doc-dao-nhat-post1205818.html " target="_blank">Đọc thêm <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page-btn">
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+    <span>4</span>
+    <span>&#8594;</span>
+</div>
+<!-- footer -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>INFORMATION</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Site Map</a></li>
+                </ul>
+            </div>
+            <div class="footer-col-2">
+                <img src="@Url.Content("~/images/imgf.png") alt="">
+                <p>Teklican - Bán điện thoại chính hãng</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>FOLLOW US</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Youtube</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+

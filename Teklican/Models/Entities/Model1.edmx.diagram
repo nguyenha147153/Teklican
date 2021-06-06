@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2339275b4c024890b4b121e9bcbb0a9b" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="CT25Team22Model.Account" Width="1.5" PointX="5.75" PointY="5.75" />
+        <EntityTypeShape EntityType="CT25Team22Model.Customer" Width="1.5" PointX="0.75" PointY="6.875" />
+        <EntityTypeShape EntityType="CT25Team22Model.Employee" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CT25Team22Model.Order" Width="1.5" PointX="3" PointY="6.875" />
+        <EntityTypeShape EntityType="CT25Team22Model.OrdersDetail" Width="1.5" PointX="5.25" PointY="1.75" />
+        <EntityTypeShape EntityType="CT25Team22Model.Product" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="CT25Team22Model.ProductType" Width="1.5" PointX="0.75" PointY="2.25" />
+        <EntityTypeShape EntityType="CT25Team22Model.sysdiagram" Width="1.5" PointX="7.75" PointY="3.75" />
+        <EntityTypeShape EntityType="CT25Team22Model.AccountsType" Width="1.5" PointX="7.75" PointY="6.75" />
+        <AssociationConnector Association="CT25Team22Model.FK_Customer_Order" />
+        <AssociationConnector Association="CT25Team22Model.FK_Order_OrdersDetail" />
+        <AssociationConnector Association="CT25Team22Model.FK_Product_OrdersDetail" />
+        <AssociationConnector Association="CT25Team22Model.FK_Product_ProductType" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
