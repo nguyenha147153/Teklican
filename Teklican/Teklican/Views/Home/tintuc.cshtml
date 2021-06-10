@@ -1,8 +1,8 @@
 ﻿
 @{
     ViewBag.Title = "Tin tức";
-    Teklican.Models.ModelView.AccountView prof = null;
-    if (Session["username"] != null) { prof = (Teklican.Models.ModelView.AccountView)Session["username"]; }
+    Teklican.Models.ModelView.CustomerView prof = null;
+    if (Session["username"] != null) { prof = (Teklican.Models.ModelView.CustomerView)Session["username"]; }
 }
 
 <div class="headerA">
@@ -27,25 +27,23 @@
                     <li>
                         @if (Session["username"] != null)
                         {
-                            <a><i class="fa fa-user"></i></a>@Html.ActionLink(prof.username, "Dangnhap", "Home")
+            <a><i class="fa fa-user"></i></a>@Html.ActionLink(prof.Fullname, "Dangnhap", "Home")
                             <div class="sub-menu-1">
                                 <ul>
                                     <li><a href="@Url.Action("UserProfile")">Thông tin</a></li>
                                     <li><a href="@Url.Action("Changepwd")">Đổi mật khẩu</a></li>
                                     <li><a href="@Url.Action("Logout")">Đăng xuất</a></li>
                                 </ul>
-                            </div>
-                        }
-                        else
-                        {
+                            </div> }
+                                        else
+                                        {
                             <a><i class="fa fa-user"></i></a>
-                            @Html.ActionLink("Đăng nhập", "Dangnhap", "Home")
-                        }
+                                            @Html.ActionLink("Đăng nhập", "Dangnhap", "Home")}
                     </li>
                     <li><a><i class="fa fa-envelope-o"></i></a>@Html.ActionLink("Liên hệ", "lienhe", "Home")</li>
                 </ul>
             </nav>
-            <a href=""> <img src="@Url.Content("~/images/favicon.ico")" width="30px" height="30px"></a>
+            <a href="@Url.Action("giohang", "Home")"> <img src="@Url.Content("~/images/favicon.ico")" width="30px" height="30px"></a>
         </div>
     </div>
 </div>

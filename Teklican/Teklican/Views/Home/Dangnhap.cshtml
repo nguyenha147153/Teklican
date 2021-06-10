@@ -50,8 +50,8 @@
             <div class="form sign-up">
                 <h2>Đăng ký</h2>
                 <label>
-                    <span>Tên</span>
-                    <input type="text" name="username" id="regis_username" maxlength="25">
+                    <span>Họ và tên</span>
+                    <input type="text" name="fullname" id="regis_fullname">
                 </label>
                 <label>
                     <span>Địa chỉ</span>
@@ -66,14 +66,18 @@
                     <input type="email" name="email" id="regis_email">
                 </label>
                 <label>
+                    <span>Tên đăng nhập</span>
+                    <input type="text" name="username" id="regis_username" minlength="6" maxlength="25">
+                </label>
+                <label>
                     <span>Mật khẩu</span>
-                    <input type="password" name="password" id="regis_password">
+                    <input type="password" name="password" id="regis_password" minlength="6" maxlength="25">
                 </label>
                 <label>
                     <span>Nhập lại mật khẩu</span>
-                    <input type="password" name="repass" id="regis_repass">
+                    <input type="password" name="repass" id="regis_repass" minlength="6" maxlength="25">
                 </label>
-                <button type="button"  id="register" class="submit">Đăng ký ngay</button>
+                <button style="margin-top: 20px" type="button" name="" id="register" class="submit">Đăng ký ngay</button>
             </div>
         </form>
     </div>
@@ -85,6 +89,7 @@
     );
     $('#register').click(function () {
         var username = $('#regis_username').val();
+        var fullname = $('#regis_fullname').val();
         var pass = $('#regis_password').val();
         var repass = $('#regis_repass').val();
         var address = $('#regis_address').val();
@@ -96,13 +101,14 @@
                     method: 'post',
                     url: '@Url.Action("Register")',
                     data: {
-                        username: username, pass: pass, address: address, phone: phone, email: email
+                        username: username, fullname: fullname, pass: pass, address: address, phone: phone, email: email
                     }
                 }).done(function (data) {
                     if (data == "success") {
                         alert("Success");
                         $('.img-btn').click();
                         $('#regis_username').val("");
+                        $('#regis_fullname').val("");
                         $('#regis_password').val("");
                         $('#regis_repass').val("");
                         $('#regis_address').val("");
@@ -115,10 +121,10 @@
                     }
                 });
             } else {
-                alert("repass incorrect!!");
+                alert("Nhập lại mật khẩu không đúng!!");
             }
         } else {
-            alert("Please enter full information!!");
+            alert("Vui lòng nhập đầy đủ thông tin!!");
         }
 
     })
@@ -134,14 +140,14 @@
             }
         }).done(function (data) {
             if (data == "Fail") {
-                alert("Username or password incorrect!!");
+                alert("Sai tài khoản hoặc mật khẩu!!");
             } else if (data == "Admin") {
-                alert("Login Success");
-                window.location.href = "tintuc";
+                alert("Đăng nhập thành công");
+                location.href = "@Url.Action("index", "admin/product")";
             } else {
-                alert("Login Success");
+                alert("Đăng nhập thành công");
                 window.location.href = "Index";
-            }
+            }3
         });
     })
 </script>

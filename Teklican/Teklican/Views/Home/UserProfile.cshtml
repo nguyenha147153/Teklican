@@ -1,8 +1,8 @@
 ﻿
 @{
     ViewBag.Title = "UserProfile";
-    Teklican.Models.ModelView.AccountView us = null;
-    if (Session["username"] != null) { us = (Teklican.Models.ModelView.AccountView)Session["username"]; }
+    Teklican.Models.ModelView.CustomerView us = null;
+    if (Session["username"] != null) { us = (Teklican.Models.ModelView.CustomerView)Session["username"]; }
 
 }
 
@@ -10,9 +10,9 @@
 @if (Session["username"] != null)
 {
     <div>Username: @us.username</div>
-    <div>Email: @us.email</div>
-    <div>Địa chỉ: @us.address</div>
-    <div>Số điện thoại: @us.phone</div>
+    <div>Email: @us.Email</div>
+    <div>Địa chỉ: @us.Address</div>
+    <div>Số điện thoại: @us.Phone</div>
 }
 else
 {

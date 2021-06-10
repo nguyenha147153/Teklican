@@ -22,6 +22,59 @@ warning 6002: The table/view 'CT25Team22.dbo.AccountsType' does not have a prima
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="name" Type="nvarchar" MaxLength="20" />
   </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="MAKH" />
+    </Key>
+    <Property Name="MAKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fullname" Type="nvarchar" MaxLength="100" />
+    <Property Name="Phone" Type="varchar" MaxLength="10" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Repass" Type="nvarchar" MaxLength="50" />
+    <Property Name="phanquyen" Type="int" />
+    <Property Name="Email" Type="nchar" MaxLength="10" />
+    <Property Name="username" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="MaNV" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenNV" Type="nvarchar" MaxLength="100" />
+    <Property Name="GioiTinh" Type="int" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
+    <Property Name="DienThoai" Type="varchar" MaxLength="10" />
+    <Property Name="NgaySinh" Type="date" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'CT25Team22.dbo.ListProduct' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ListProduct">
+          <Property Name="MaHang" Type="nvarchar" MaxLength="50" />
+          <Property Name="TenHang" Type="varchar" MaxLength="50" />
+          <Property Name="DongSP" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_cus" Type="int" />
+    <Property Name="total" Type="float" />
+    <Property Name="create_day" Type="datetime" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="OrdersDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_order" Type="int" />
+    <Property Name="id_product" Type="int" />
+    <Property Name="quantity" Type="int" />
+    <Property Name="sub_total" Type="float" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
   <EntityType Name="Product">
     <Key>
       <PropertyRef Name="id_Product" />
@@ -35,6 +88,11 @@ warning 6002: The table/view 'CT25Team22.dbo.AccountsType' does not have a prima
     <Property Name="inventory" Type="int" />
     <Property Name="img" Type="nchar" MaxLength="50" />
     <Property Name="tax" Type="int" />
+    <Property Name="small_img1" Type="nchar" MaxLength="50" />
+    <Property Name="small_img2" Type="nchar" MaxLength="50" />
+    <Property Name="small_img3" Type="nchar" MaxLength="50" />
+    <Property Name="small_img4" Type="nchar" MaxLength="50" />
+    <Property Name="small_img5" Type="nchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="ProductType">
     <Key>
@@ -53,6 +111,42 @@ warning 6002: The table/view 'CT25Team22.dbo.AccountsType' does not have a prima
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <Association Name="FK_Customer_Order">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="MAKH" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="id_cus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_OrdersDetail">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+    <End Role="OrdersDetail" Type="Self.OrdersDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="OrdersDetail">
+        <PropertyRef Name="id_order" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_OrdersDetail">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="OrdersDetail" Type="Self.OrdersDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="id_Product" />
+      </Principal>
+      <Dependent Role="OrdersDetail">
+        <PropertyRef Name="id_product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Product_ProductType">
     <End Role="ProductType" Type="Self.ProductType" Multiplicity="0..1" />
     <End Role="Product" Type="Self.Product" Multiplicity="*" />
@@ -67,6 +161,10 @@ warning 6002: The table/view 'CT25Team22.dbo.AccountsType' does not have a prima
   </Association>
   <EntityContainer Name="CT25Team22ModelStoreContainer">
     <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrdersDetail" EntityType="Self.OrdersDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ProductType" EntityType="Self.ProductType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -76,6 +174,18 @@ warning 6002: The table/view 'CT25Team22.dbo.AccountsType' does not have a prima
     [AccountsType].[name] AS [name]
     FROM [dbo].[AccountsType] AS [AccountsType]</DefiningQuery>
     </EntitySet>
+    <AssociationSet Name="FK_Customer_Order" Association="Self.FK_Customer_Order">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_OrdersDetail" Association="Self.FK_Order_OrdersDetail">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrdersDetail" EntitySet="OrdersDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_OrdersDetail" Association="Self.FK_Product_OrdersDetail">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="OrdersDetail" EntitySet="OrdersDetail" />
+    </AssociationSet>
     <AssociationSet Name="FK_Product_ProductType" Association="Self.FK_Product_ProductType">
       <End Role="ProductType" EntitySet="ProductType" />
       <End Role="Product" EntitySet="Product" />

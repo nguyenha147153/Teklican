@@ -129,46 +129,136 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Admin\Models\View\OrderDetailView.cs" />
+    <Compile Include="Areas\Admin\Models\View\OrderView.cs" />
+    <Compile Include="Areas\Admin\Models\View\ProductView.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\Account.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>CT25Team22.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\AccountsType.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>CT25Team22.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Entities\Model1.Context.cs">
+    <Compile Include="Models\Entities\CT25Team22.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
+      <DependentUpon>CT25Team22.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Entities\Model1.cs">
+    <Compile Include="Models\Entities\CT25Team22.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>CT25Team22.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Entities\Model1.Designer.cs">
+    <Compile Include="Models\Entities\CT25Team22.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>CT25Team22.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Customer.cs">
+      <DependentUpon>CT25Team22.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Employee.cs">
+      <DependentUpon>CT25Team22.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Order.cs">
+      <DependentUpon>CT25Team22.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\OrdersDetail.cs">
+      <DependentUpon>CT25Team22.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\Product.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>CT25Team22.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\ProductType.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>CT25Team22.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\sysdiagram.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>CT25Team22.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ModelView\AccountView.cs" />
+    <Compile Include="Models\ModelView\Cart.cs" />
+    <Compile Include="Models\ModelView\CartView.cs" />
+    <Compile Include="Models\ModelView\CustomerView.cs" />
     <Compile Include="Models\ModelView\ProductView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\assets\css\style.css" />
+    <Content Include="Areas\Admin\assets\fonts\datta\datta-icon.css" />
+    <Content Include="Areas\Admin\assets\fonts\datta\fonts\pct.svg" />
+    <Content Include="Areas\Admin\assets\fonts\feather\css\feather.css" />
+    <Content Include="Areas\Admin\assets\fonts\feather\fonts\feather.svg" />
+    <Content Include="Areas\Admin\assets\fonts\fontawesome\css\fontawesome-all.min.css" />
+    <Content Include="Areas\Admin\assets\fonts\fontawesome\webfonts\fa-brands-400.svg" />
+    <Content Include="Areas\Admin\assets\fonts\fontawesome\webfonts\fa-regular-400.svg" />
+    <Content Include="Areas\Admin\assets\fonts\fontawesome\webfonts\fa-solid-900.svg" />
+    <Content Include="Areas\Admin\assets\images\browser\chrome.png" />
+    <Content Include="Areas\Admin\assets\images\browser\firefox.png" />
+    <Content Include="Areas\Admin\assets\images\browser\ie.png" />
+    <Content Include="Areas\Admin\assets\images\browser\opera.png" />
+    <Content Include="Areas\Admin\assets\images\browser\safari.png" />
+    <Content Include="Areas\Admin\assets\images\favicon.ico" />
+    <Content Include="Areas\Admin\assets\images\logo-dark.png" />
+    <Content Include="Areas\Admin\assets\images\logo-thumb.png" />
+    <Content Include="Areas\Admin\assets\images\logo.png" />
+    <Content Include="Areas\Admin\assets\images\slider\img-slide-1.jpg" />
+    <Content Include="Areas\Admin\assets\images\slider\img-slide-2.jpg" />
+    <Content Include="Areas\Admin\assets\images\slider\img-slide-3.jpg" />
+    <Content Include="Areas\Admin\assets\images\slider\img-slide-4.jpg" />
+    <Content Include="Areas\Admin\assets\images\slider\img-slide-5.jpg" />
+    <Content Include="Areas\Admin\assets\images\slider\img1.jpg" />
+    <Content Include="Areas\Admin\assets\images\slider\img2.jpg" />
+    <Content Include="Areas\Admin\assets\images\slider\img3.jpg" />
+    <Content Include="Areas\Admin\assets\images\user\avatar-1.jpg" />
+    <Content Include="Areas\Admin\assets\images\user\avatar-2.jpg" />
+    <Content Include="Areas\Admin\assets\images\user\avatar-3.jpg" />
+    <Content Include="Areas\Admin\assets\images\user\avatar-4.jpg" />
+    <Content Include="Areas\Admin\assets\images\user\avatar-5.jpg" />
+    <Content Include="Areas\Admin\assets\images\user\user-1.png" />
+    <Content Include="Areas\Admin\assets\images\user\user-2.png" />
+    <Content Include="Areas\Admin\assets\images\widget\dashborad-1.png" />
+    <Content Include="Areas\Admin\assets\images\widget\dashborad-2.png" />
+    <Content Include="Areas\Admin\assets\images\widget\dashborad-3.png" />
+    <Content Include="Areas\Admin\assets\images\widget\dashborad-4.png" />
+    <Content Include="Areas\Admin\assets\images\widget\dashborad-5.png" />
+    <Content Include="Areas\Admin\assets\images\widget\dashborad-6.png" />
+    <Content Include="Areas\Admin\assets\images\widget\emoticon.png" />
+    <Content Include="Areas\Admin\assets\js\pages\chart-morris-custom.js" />
+    <Content Include="Areas\Admin\assets\js\pages\google-maps.js" />
+    <Content Include="Areas\Admin\assets\js\pcoded.min.js" />
+    <Content Include="Areas\Admin\assets\js\vendor-all.min.js" />
+    <Content Include="Areas\Admin\assets\plugins\amchart\js\amcharts.js" />
+    <Content Include="Areas\Admin\assets\plugins\amchart\js\ammap.min.js" />
+    <Content Include="Areas\Admin\assets\plugins\amchart\js\gauge.js" />
+    <Content Include="Areas\Admin\assets\plugins\amchart\js\images\dragIconRoundBig.svg" />
+    <Content Include="Areas\Admin\assets\plugins\amchart\js\images\lens.svg" />
+    <Content Include="Areas\Admin\assets\plugins\amchart\js\light.js" />
+    <Content Include="Areas\Admin\assets\plugins\amchart\js\pie.min.js" />
+    <Content Include="Areas\Admin\assets\plugins\amchart\js\radar.js" />
+    <Content Include="Areas\Admin\assets\plugins\amchart\js\serial.js" />
+    <Content Include="Areas\Admin\assets\plugins\amchart\js\usaLow.js" />
+    <Content Include="Areas\Admin\assets\plugins\amchart\js\worldLow.js" />
+    <Content Include="Areas\Admin\assets\plugins\animation\css\animate.min.css" />
+    <Content Include="Areas\Admin\assets\plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="Areas\Admin\assets\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Areas\Admin\assets\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="Areas\Admin\assets\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Areas\Admin\assets\plugins\bootstrap\js\popover.js" />
+    <Content Include="Areas\Admin\assets\plugins\chart-morris\css\morris.css" />
+    <Content Include="Areas\Admin\assets\plugins\chart-morris\js\morris.min.js" />
+    <Content Include="Areas\Admin\assets\plugins\chart-morris\js\raphael.min.js" />
+    <Content Include="Areas\Admin\assets\plugins\google-maps\js\gmaps.js" />
+    <Content Include="Areas\Admin\assets\plugins\jquery-scrollbar\css\jquery.scrollbar.min.css" />
+    <Content Include="Areas\Admin\assets\plugins\jquery-scrollbar\js\jquery.scrollbar.min.js" />
+    <Content Include="Areas\Admin\assets\plugins\jquery-ui\js\jquery-ui.js" />
+    <Content Include="Areas\Admin\assets\plugins\jquery\js\jquery.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -178,6 +268,9 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="images\12pmd.png" />
+    <Content Include="images\12pmg.png" />
+    <Content Include="images\12pmt-.png" />
     <Content Include="images\banner.png" />
     <Content Include="images\banner_01.png" />
     <Content Include="images\banner_02.png" />
@@ -197,61 +290,31 @@
     <Content Include="images\imgb3.jpg" />
     <Content Include="images\imgf.png" />
     <Content Include="images\instagram.png" />
+    <Content Include="images\ip12mn.jpg" />
+    <Content Include="images\ip12pm.jpg" />
+    <Content Include="images\ip7p.png" />
+    <Content Include="images\ip8p.jpg" />
     <Content Include="images\iphone-12.png" />
+    <Content Include="images\iphone1.jpeg" />
+    <Content Include="images\iphone2.jpeg" />
+    <Content Include="images\iphone3.jpeg" />
+    <Content Include="images\iphone4.jpeg" />
+    <Content Include="images\iphone5.jpeg" />
+    <Content Include="images\iphone6.jpeg" />
     <Content Include="images\LGN.png" />
     <Content Include="images\linkedin.png" />
     <Content Include="images\logoap.png" />
     <Content Include="images\logof.png" />
     <Content Include="images\logoss.png" />
-    <Content Include="images\products\12pmd.png" />
-    <Content Include="images\products\12pmg.png" />
-    <Content Include="images\products\12pmt-.png" />
-    <Content Include="images\products\ip12mn.jpg" />
-    <Content Include="images\products\ip12pm.jpg" />
-    <Content Include="images\products\ip7p.png" />
-    <Content Include="images\products\ip8p.jpg" />
-    <Content Include="images\products\iphone-12.png" />
-    <Content Include="images\products\iphone1.jpeg" />
-    <Content Include="images\products\iphone2.jpeg" />
-    <Content Include="images\products\iphone3.jpeg" />
-    <Content Include="images\products\iphone4.jpeg" />
-    <Content Include="images\products\iphone5.jpeg" />
-    <Content Include="images\products\iphone6 - Copy.jpeg" />
-    <Content Include="images\products\iphone6.jpeg" />
-    <Content Include="images\products\iPhone\12pmd.png" />
-    <Content Include="images\products\iPhone\12pmg.png" />
-    <Content Include="images\products\iPhone\12pmt-.png" />
-    <Content Include="images\products\iPhone\ip12mn.jpg" />
-    <Content Include="images\products\iPhone\ip12pm.jpg" />
-    <Content Include="images\products\iPhone\ip7p.png" />
-    <Content Include="images\products\iPhone\ip8p.jpg" />
-    <Content Include="images\products\iPhone\iphone-12.png" />
-    <Content Include="images\products\iPhone\iphone1.jpeg" />
-    <Content Include="images\products\iPhone\iphone2.jpeg" />
-    <Content Include="images\products\iPhone\iphone3.jpeg" />
-    <Content Include="images\products\iPhone\iphone4.jpeg" />
-    <Content Include="images\products\iPhone\iphone5.jpeg" />
-    <Content Include="images\products\iPhone\iphone6.jpeg" />
-    <Content Include="images\products\note10.jpg" />
-    <Content Include="images\products\s20u.jpg" />
-    <Content Include="images\products\s21.png" />
-    <Content Include="images\products\samsung1.jpeg" />
-    <Content Include="images\products\samsung2.jpeg" />
-    <Content Include="images\products\samsung3.jpeg" />
-    <Content Include="images\products\samsung4.jpeg" />
-    <Content Include="images\products\samsung5.jpeg" />
-    <Content Include="images\products\samsung6.jpeg" />
-    <Content Include="images\products\ss.png" />
-    <Content Include="images\products\sumsung\note10.jpg" />
-    <Content Include="images\products\sumsung\s20u.jpg" />
-    <Content Include="images\products\sumsung\samsung1.jpeg" />
-    <Content Include="images\products\sumsung\samsung2.jpeg" />
-    <Content Include="images\products\sumsung\samsung3.jpeg" />
-    <Content Include="images\products\sumsung\samsung4.jpeg" />
-    <Content Include="images\products\sumsung\samsung5.jpeg" />
-    <Content Include="images\products\sumsung\samsung6.jpeg" />
-    <Content Include="images\products\xsm.png" />
+    <Content Include="images\note10.jpg" />
+    <Content Include="images\s20u.jpg" />
     <Content Include="images\s21.png" />
+    <Content Include="images\samsung1.jpeg" />
+    <Content Include="images\samsung2.jpeg" />
+    <Content Include="images\samsung3.jpeg" />
+    <Content Include="images\samsung4.jpeg" />
+    <Content Include="images\samsung5.jpeg" />
+    <Content Include="images\samsung6.jpeg" />
     <Content Include="images\ss.png" />
     <Content Include="images\twitter.png" />
     <Content Include="images\user-1.png" />
@@ -259,30 +322,64 @@
     <Content Include="images\user-3.png" />
     <Content Include="images\xsm.png" />
     <Content Include="images\zf2.jpg" />
-    <Content Include="Models\Entities\Model1.Context.tt">
+    <Content Include="Models\Entities\CT25Team22.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>CT25Team22.edmx</DependentUpon>
+      <LastGenOutput>CT25Team22.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Entities\Model1.tt">
+    <Content Include="Models\Entities\CT25Team22.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>CT25Team22.edmx</DependentUpon>
+      <LastGenOutput>CT25Team22.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\Entities\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Entities\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
+    <EntityDeploy Include="Models\Entities\CT25Team22.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CT25Team22.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Entities\CT25Team22.edmx.diagram">
+      <DependentUpon>CT25Team22.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\Admin\assets\.DS_Store" />
+    <Content Include="Areas\Admin\assets\fonts\datta\fonts\pct.eot" />
+    <Content Include="Areas\Admin\assets\fonts\datta\fonts\pct.ttf" />
+    <Content Include="Areas\Admin\assets\fonts\datta\fonts\pct.woff" />
+    <Content Include="Areas\Admin\assets\fonts\feather\fonts\feather.eot" />
+    <Content Include="Areas\Admin\assets\fonts\feather\fonts\feather.ttf" />
+    <Content Include="Areas\Admin\assets\fonts\feather\fonts\feather.woff" />
+    <Content Include="Areas\Admin\assets\fonts\fontawesome\webfonts\fa-brands-400.eot" />
+    <Content Include="Areas\Admin\assets\fonts\fontawesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="Areas\Admin\assets\fonts\fontawesome\webfonts\fa-brands-400.woff" />
+    <Content Include="Areas\Admin\assets\fonts\fontawesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="Areas\Admin\assets\fonts\fontawesome\webfonts\fa-regular-400.eot" />
+    <Content Include="Areas\Admin\assets\fonts\fontawesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="Areas\Admin\assets\fonts\fontawesome\webfonts\fa-regular-400.woff" />
+    <Content Include="Areas\Admin\assets\fonts\fontawesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="Areas\Admin\assets\fonts\fontawesome\webfonts\fa-solid-900.eot" />
+    <Content Include="Areas\Admin\assets\fonts\fontawesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="Areas\Admin\assets\fonts\fontawesome\webfonts\fa-solid-900.woff" />
+    <Content Include="Areas\Admin\assets\fonts\fontawesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="Areas\Admin\assets\images\browser\Thumbs.db" />
+    <Content Include="Areas\Admin\assets\images\Thumbs.db" />
+    <Content Include="Areas\Admin\assets\images\user\Thumbs.db" />
+    <Content Include="Areas\Admin\assets\images\widget\Thumbs.db" />
+    <Content Include="Areas\Admin\assets\plugins\.DS_Store" />
+    <Content Include="Areas\Admin\assets\plugins\jquery-ui\.DS_Store" />
+    <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\OrderDetail.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\updateOrderDetail.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Update.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\web.config" />
+    <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -323,12 +420,17 @@
     <Content Include="Views\Home\Apple.cshtml" />
     <Content Include="Views\Home\Samsung.cshtml" />
     <Content Include="Views\Home\Changepwd.cshtml" />
+    <Content Include="Views\Home\giohang.cshtml" />
+    <Content Include="Views\ShoppingCart\Create.cshtml" />
+    <Content Include="Views\ShoppingCart\Delete.cshtml" />
+    <Content Include="Views\ShoppingCart\Details.cshtml" />
+    <Content Include="Views\ShoppingCart\Edit.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\Home\checkout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

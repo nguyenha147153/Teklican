@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Thanh Toán";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="small-container cart-page">
+    <table class="tb-cart">
+        <thead>
+            <tr>
+                <th>Sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Giá tiền</th>
+            </tr>
+        </thead>
+        @if (Session["Cart"] != null)
+        {
+            var listCart = (List<Teklican.Models.ModelView.Cart>)Session["Cart"];
+            decimal total = 0;
+            foreach (var item in listCart)
+            {
+                total += item.sub_total;
+                Teklican.Models.Entities.CT25Team22Entities db = new Teklican.Models.Entities.CT25Team22Entities();
+                var pro = db.Products.Where(d => d.id_Product == item.id_product).FirstOrDefault();
+                <tr id="c-pds">
+                    <td>
+                        <div class="cart-info">
+                            <img src="~/images/@pro.img">
+                            <div>
+                                <p><a href="@Url.Action("Details","Home", new { id = item.id_product})">@pro.name</a></p>
+                                <small>@string.Format("{0:#,##0 VNĐ}", @pro.price)</small><br>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        @using (Html.BeginForm("Edit", "ShoppingCart"))
+                        {
+                            <input type="hidden" value="@item.id_product" name="ProductId">
+                            <label>@item.quantity</label>
+                        }
+
+                    </td>
+                    @{
+                        var subtotal = pro.price * item.quantity;
+                        <td>@string.Format("{0:#,##0 VNĐ}", @subtotal)</td>
+                    }
+
+                </tr>
+
+            }
+            <tr>
+                <td></td>
+                <td style="text-align: right; border-top: 2px solid black;">Tổng tiền:</td>
+                <td style="text-align: right; border-top: 2px solid black;"> @string.Format("{0:#,##0 VNĐ}", @total)</td>
+            </tr>
+            <tr>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>
+                    @*<button style="background-color:black"> @Url.Action( "Update", "ShoppingCart", new { productid = "Test"})</button>*@
+                </td>
+                <td>
+                </td>
+                <td>
+                    <a href="@Url.Action("giohang")">Sửa</a>
+                    <button class="submit" type="button" id="checkout"> <a href="@Url.Action("Payment")">Payment</a></button>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

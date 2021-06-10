@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace Demo.Areas.Admin
+namespace Teklican.Areas.Admin
 {
     public class AdminAreaRegistration : AreaRegistration 
     {

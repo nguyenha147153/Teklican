@@ -663,6 +663,23 @@ th {
 td {
     padding: 10px 5px;
 }
+button {
+    margin: 0 auto;
+    width: 150px;
+    height: 36px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.submit {
+    background: -webkit-linear-gradient(left, #14d4c4, #03506e);
+}
+
+    .submit:hover {
+        background: -webkit-linear-gradient(left, #995d02, #da0707);
+    }
 
     td input {
         width: 40px;

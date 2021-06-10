@@ -14,6 +14,12 @@ namespace Teklican.Models.Entities
     
     public partial class Product
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Product()
+        {
+            this.OrdersDetails = new HashSet<OrdersDetail>();
+        }
+    
         public int id_Product { get; set; }
         public string name { get; set; }
         public Nullable<int> id_ProductType { get; set; }
@@ -23,7 +29,14 @@ namespace Teklican.Models.Entities
         public Nullable<int> inventory { get; set; }
         public string img { get; set; }
         public Nullable<int> tax { get; set; }
+        public string small_img1 { get; set; }
+        public string small_img2 { get; set; }
+        public string small_img3 { get; set; }
+        public string small_img4 { get; set; }
+        public string small_img5 { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrdersDetail> OrdersDetails { get; set; }
         public virtual ProductType ProductType { get; set; }
     }
 }

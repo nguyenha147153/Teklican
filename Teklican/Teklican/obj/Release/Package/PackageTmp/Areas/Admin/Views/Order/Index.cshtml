@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    .table_legenda {
+        table-layout: fixed;
+    }
+
+        .table_legenda tr {
+            overflow-wrap: break-word;
+        }
+</style>
+
+<div class="container col-12 centerPage">
+    <div class="tab-content" id="myTabContent">
+        <div style="margin-bottom: 15px;">
+            <button class="btn btn-danger" id="create">Create new product</button>
+        </div>
+        <div style="display: flex; margin-bottom: 25px;">
+            <input type="text" class="form-control" id="namesearch" name="name" value="" placeholder="Enter Customer Name" style="width: 350px;" />
+            <button class="btn btn-primary" id="search" style="margin-left: 15px;">Search</button>
+        </div>
+        <div class="card-header">
+            <h5>Order</h5>
+        </div>
+        <div class="tab-pane fade active show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <table class="table_legenda" width="100%" border="1" height="10px">
+                <thead>
+                    <tr>
+                        <th>Customer</th>
+                        <th>Create Day</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Session["listSearchOrder"] != null)
+                    {
+                        var ListOrder = (List<Teklican.Areas.Admin.Models.View.OrderView>)Session["listSearchOrder"];
+                        foreach (var item in ListOrder)
+                        {
+                            <tr style="overflow-wrap: break-word; margin-bottom: 10px;">
+                                @* m-0 text-c-red *@
+                                @*class="text-right"*@
+                                <td>
+                                    <h6 class="m-0">@item.name_cus</h6>
+                                </td>
+                                <td>
+                                    <h6 class="m-0">@item.createDay</h6>
+                                </td>
+                                <td>
+                                    <h6 class="m-0">@item.total</h6>
+                                </td>
+                                @if (item.status == true)
+                                {
+                                    <td>
+                                        <h6 class="m-0">UnComplete</h6>
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        <h6 class="m-0">Complete</h6>
+                                    </td>
+                                }
+
+                                <td><a href="@Url.Action("OrderDetail", new { id_order = item.id})">View</a>&nbsp;&nbsp;<a href="@Url.Action("CompleteOrder", new { id_order = item.id})" style="cursor: pointer;" onclick="deleteProduct(this);" data-id="@item.id">Complete</a></td>
+                            </tr>
+                        }
+                        Session["listSearchOrder"] = null;
+                    }
+                    else
+                    {
+                        var ListOrder = (List<Teklican.Areas.Admin.Models.View.OrderView>)Session["listOrder"];
+                        foreach (var item in ListOrder)
+                        {
+                            <tr style="overflow-wrap: break-word; margin-bottom: 10px;">
+                                @* m-0 text-c-red *@
+                                @*class="text-right"*@
+                                <td>
+                                    <h6 class="m-0">@item.name_cus</h6>
+                                </td>
+                                <td>
+                                    <h6 class="m-0">@item.createDay</h6>
+                                </td>
+                                <td>
+                                    <h6 class="m-0">@item.total</h6>
+                                </td>
+                                @if (item.status == true)
+                                {
+                                    <td>
+                                        <h6 class="m-0">UnComplete</h6>
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        <h6 class="m-0">Complete</h6>
+                                    </td>
+                                }
+
+                                <td><a href="@Url.Action("OrderDetail", new { id_order = item.id})">View</a>&nbsp;&nbsp;<a href="@Url.Action("CompleteOrder", new { id_order = item.id})" style="cursor: pointer;" onclick="deleteProduct(this);" data-id="@item.id">Complete</a></td>
+                            </tr>
+                        }
+                    }
+
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $('#search').click(function () {
+        var name = $('#namesearch').val();
+        location.href = "@Url.Action("SerachCustomerName")?name=" + name;
+    })
+</script>
+
