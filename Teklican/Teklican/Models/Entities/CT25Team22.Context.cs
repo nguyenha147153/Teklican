@@ -25,9 +25,7 @@ namespace Teklican.Models.Entities
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<OrdersDetail> OrdersDetails { get; set; }
         public virtual DbSet<Product> Products { get; set; }

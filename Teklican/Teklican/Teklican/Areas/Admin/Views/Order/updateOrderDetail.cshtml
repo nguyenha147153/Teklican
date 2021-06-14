@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "updateOrderDetail";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+</style>
+<div class="container col-11 centerPage">
+    <h5>Update OrderDetail</h5>
+    @if (Session["orderDetail"] != null)
+    {
+        var item = (Teklican.Areas.Admin.Models.View.OrderDetailView)Session["orderDetail"];
+        <form action="@Url.Action("updateOD")" method="post">
+            <div class="row">
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Product</label>
+                        <input type="text" class="form-control" name="name" placeholder="Enter name" disabled value="@item.name_product">
+                        <input type="hidden" class="form-control" name="id_orderdetail" readonly value="@item.id">
+                        <input type="hidden" class="form-control" name="id_order" readonly value="@item.id_order">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Type</label>
+                        <input type="text" class="form-control" name="type" id="type" placeholder="Enter price" disabled value="@item.type">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Price</label>
+                        <input type="text" class="form-control" name="price" id="price" placeholder="Enter name" disabled value="@item.price">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Quantity</label>
+                        <input type="number" class="form-control" name="quantity" id="quantity"  placeholder="Enter price" value="@item.quantity">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Subtoal</label>
+                        <input type="number" class="form-control" name="sub" id="sub_total" placeholder="Enter price" readonly value="@item.sub_total">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+               
+            </div>
+        </form>
+    }
+
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $('#quantity').keyup(function () {
+        var price = $('#price').val();
+        var quantity = $(this).val();
+        if (quantity == "") {
+            $('#sub_total').val(0);
+        } else {
+            var subtotal = price * quantity;
+            $('#sub_total').val(subtotal);
+        }
+        
+    })
+</script>
+

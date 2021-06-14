@@ -18,45 +18,66 @@ namespace Project.Tests.Controllers
         public void Index()
         {
             // Arrange
-            var controller = new HomeController();
-
-            // Act
-            var result = controller.Index() as ViewResult;
-            // Assert
-            Assert.IsNotNull(result);
-
-            var prod = result.Model as List<ProductView>;
-            Assert.IsNotNull(prod);
-
-            var db = new CT25Team22Entities();
-            Assert.AreEqual(db.Products.Count(), prod.Count);
-        }
-        public void Login()
-        {
-            var controller = new HomeController();
-            var result = controller.Index() as ViewResult;
-            // Assert
-            var usename = result.Model as String;
-            Assert.IsNotNull(usename);
-            var password = result.Model as String;
-            Assert.IsNotNull(password);
-            var users = result.Model as List<AccountView>;
-            var db = new CT25Team22Entities();
-            
-            
-        }
-
-        [TestMethod]
-        public void About()
-        {
-            // Arrange
             HomeController controller = new HomeController();
 
-            // Act
-            ViewResult result = controller.About() as ViewResult;
+            ViewResult result = controller.Index() as ViewResult;
 
-            // Assert
-            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
+            Assert.IsNotNull(result);
+
+        }
+        //public void Login()
+        //{
+        //    var controller = new HomeController();
+        //    var result = controller.Index() as ViewResult;
+        //    // Assert
+        //    var usename = result.Model as String;
+        //    Assert.IsNotNull(usename);
+        //    var password = result.Model as String;
+        //    Assert.IsNotNull(password);
+        //    var users = result.Model as List<AccountView>;
+        //    var db = new CT25Team22Entities();
+
+
+        //}
+        [TestMethod]
+        public void TestDetails()
+        {
+            var controller = new HomeController();
+            var result0 = controller.Details(0) as HttpNotFoundResult;
+            Assert.IsNotNull(result0);
+
+            var db = new CT25Team22Entities();
+            var product = db.Products.First();
+            var result1 = controller.Details(product.id_Product) as ViewResult;
+            Assert.IsNotNull(result1);
+
+            var model = result1.Model as Product;
+            Assert.IsNotNull(model);
+            Assert.AreEqual(product.img, model.img);
+            Assert.AreEqual(product.name, model.name);
+            Assert.AreEqual(product.price, model.price);
+            Assert.AreEqual(product.description, model.description);
+        }
+
+
+        [TestMethod]
+        public void Details()
+        {
+            var controller = new HomeController();
+            var result0 = controller.Details(0) as HttpNotFoundResult;
+            Assert.IsNotNull(result0);
+
+            var db = new CT25Team22Entities();
+            var product = db.Products.First();
+            var result1 = controller.Details(product.id_Product) as ViewResult;
+            Assert.IsNotNull(result1);
+
+            var model = result1.Model as Product;
+            Assert.IsNotNull(model);
+            Assert.AreEqual(product.img, model.img);
+            Assert.AreEqual(product.name, model.name);
+            Assert.AreEqual(product.price, model.price);
+            Assert.AreEqual(product.description, model.description);
         }
 
         [TestMethod]

@@ -1,0 +1,168 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+    Teklican.Models.ModelView.CustomerView prof = null;
+    if (Session["username"] != null) { prof = (Teklican.Models.ModelView.CustomerView)Session["username"]; }
+}
+
+<div class="headerA">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="@Url.Action("Index", "Home")"> <img src="@Url.Content("~/images/LGN.png")" width="105px"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <div class="search-box">
+                            <input class="search-txt" type="text" id="name_search" name="search" placeholder="Bạn muốn tìm gì?">
+                            <a class="search-btn" href="">
+                                <i class="fa fa-search" aria-hidden="true" id="searchh"></i>
+                            </a>
+                        </div>
+                    </li>
+                    <li><a><i class="fa fa-home"></i></a>@Html.ActionLink("Trang chủ", "Index", "Home")</li>
+                    <li>
+                        <a><i class="fa fa-mobile"></i></i></a>@Html.ActionLink("Sản phẩm", "Product", "Home")
+                        <div class="sub-menu-1">
+                            <ul>
+                                <li>@Html.ActionLink("Apple", "Apple")</li>
+                                <li>@Html.ActionLink("Samsung", "Samsung")</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a><i class="fa fa-newspaper-o"></i></a>@Html.ActionLink("Tin tức", "tintuc", "Home")</li>
+                    <li>
+                        @if (Session["username"] != null)
+                        {
+                            <a><i class="fa fa-user"></i></a>@Html.ActionLink(prof.Fullname, "Dangnhap", "Home")
+                            <div class="sub-menu-1">
+                                <ul>
+                                    <li><a href="@Url.Action("UserProfile")">Thông tin</a></li>
+                                    <li><a href="@Url.Action("Changepwd")">Đổi mật khẩu</a></li>
+                                    <li><a href="@Url.Action("Logout")">Đăng xuất</a></li>
+                                </ul>
+                            </div> }
+                        else
+                        {
+                            <a><i class="fa fa-user"></i></a>
+                            @Html.ActionLink("Đăng nhập", "Dangnhap", "Home")}
+                    </li>
+                    <li><a><i class="fa fa-envelope-o"></i></a>@Html.ActionLink("Liên hệ", "lienhe", "Home")</li>
+                </ul>
+            </nav>
+            <a href="@Url.Action("giohang", "Home")"> <img src="@Url.Content("~/images/favicon.ico")" width="30px" height="30px"></a>
+        </div>
+    </div>
+</div>
+
+<div class="small-container cart-page">
+
+    <table class="tb-cart">
+        @if (Session["Cart"] != null)
+        {
+            <thead>
+                <tr>
+                    <th>Sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Giá tiền</th>
+                </tr>
+            </thead>
+
+            decimal total = 0;
+            var Model = (List<Teklican.Models.ModelView.Cart>)Session["Cart"];
+            foreach (var item in Model)
+            {
+                total += item.sub_total;
+                Teklican.Models.Entities.CT25Team22Entities db = new Teklican.Models.Entities.CT25Team22Entities();
+                var pro = db.Products.Where(d => d.id_Product == item.id_product).FirstOrDefault();
+
+
+            <tr id="c-pds">
+                <td>
+                    <div class="cart-info">
+                        <img src="~/images/@pro.img">
+                        <div>
+                            <p><a href="@Url.Action("Details","Home", new { id = item.id_product})">@pro.name</a></p>
+                            <small>@string.Format("{0:#,##0 VNĐ}", @pro.price)</small><br>
+                            <a id="xoa" style="width:150px; color:black; background-color:aquamarine; border-radius:40px" href="/ShoppingCart/RemoveItem/@item.id_product">Xóa khỏi giỏ hàng</a>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    @using (Html.BeginForm("Edit", "ShoppingCart"))
+                    {
+                        <input type="hidden" value="@item.id_product" name="ProductId">
+                        <input type="number" name="Quantity" value="@item.quantity" min="1" max="10">
+                        <input style="width:auto" class="btn" type="submit" value="Cập nhật số lượng" />
+                    }
+
+                </td>
+                @{
+                    var subtotal = pro.price * item.quantity;
+                        <td>@*@String.Format("{0:#,##0,000 VNĐ}",*@ @string.Format("{0:#,##0 VNĐ}", @subtotal)</td>
+                }
+
+            </tr>
+            }
+            <tr>
+                <td></td>
+                <td style="text-align: right; border-top: 2px solid black;">Tổng tiền: </td>
+                <td style="border-top: 2px solid black;">@string.Format("{0:#,##0 VNĐ}", @total)</td>
+            </tr>
+            <tr>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>
+                    <button style="background-color:black"> @Html.ActionLink("Tiếp tục mua hàng", "Product", "Home")</button>
+                    @*<button style="background-color:black"> @Url.Action( "Update", "ShoppingCart", new { productid = "Test"})</button>*@
+                </td>
+                <td>
+                </td>
+                <td>
+                    <button class="submit" type="button" id="checkout"> <a href="@Url.Action("checkout")">Thanh Toán</a></button>
+                </td>
+            </tr>
+        }
+        else
+        {
+            <button style="background-color:black; width:auto"> @Html.ActionLink("Giỏ hàng trống, Bấm vào để chọn sản phẩm", "Product", "Home")</button>
+        }
+    </table>
+</div>
+
+
+
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>INFORMATION</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Site Map</a></li>
+                </ul>
+            </div>
+            <div class="footer-col-2">
+                <img src="@Url.Content("~/images/imgf.png")" alt="">
+                <p>Teklican - Bán điện thoại chính hãng</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>FOLLOW US</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Youtube</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+

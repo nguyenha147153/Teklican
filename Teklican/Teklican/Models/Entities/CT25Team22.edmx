@@ -4,20 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CT25Team22Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Account">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="usernname" Type="varchar" MaxLength="20" />
-          <Property Name="email" Type="nvarchar" MaxLength="50" />
-          <Property Name="pwd" Type="nvarchar" MaxLength="30" />
-          <Property Name="repwd" Type="nvarchar" MaxLength="30" />
-          <Property Name="phanquyen" Type="int" />
-          <Property Name="address" Type="nvarchar" MaxLength="100" />
-          <Property Name="phone" Type="char" MaxLength="10" />
-        </EntityType>
+    <Schema Namespace="CT25Team22Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'CT25Team22.dbo.AccountsType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="AccountsType">
@@ -41,24 +28,6 @@ warning 6002: The table/view 'CT25Team22.dbo.AccountsType' does not have a prima
           <Property Name="Email" Type="varchar" MaxLength="150" />
           <Property Name="username" Type="varchar" MaxLength="20" />
         </EntityType>
-        <EntityType Name="Employee">
-          <Key>
-            <PropertyRef Name="MaNV" />
-          </Key>
-          <Property Name="MaNV" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="TenNV" Type="nvarchar" MaxLength="100" />
-          <Property Name="GioiTinh" Type="int" />
-          <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
-          <Property Name="DienThoai" Type="varchar" MaxLength="10" />
-          <Property Name="NgaySinh" Type="date" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'CT25Team22.dbo.ListProduct' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ListProduct">
-          <Property Name="MaHang" Type="nvarchar" MaxLength="50" />
-          <Property Name="TenHang" Type="varchar" MaxLength="50" />
-          <Property Name="DongSP" Type="varchar" MaxLength="50" />
-        </EntityType>-->
         <EntityType Name="Orders">
           <Key>
             <PropertyRef Name="id" />
@@ -98,6 +67,7 @@ warning 6013: The table/view 'CT25Team22.dbo.ListProduct' does not have a primar
           <Property Name="small_img3" Type="nchar" MaxLength="50" />
           <Property Name="small_img4" Type="nchar" MaxLength="50" />
           <Property Name="small_img5" Type="nchar" MaxLength="50" />
+          <Property Name="old_price" Type="float" />
         </EntityType>
         <EntityType Name="ProductType">
           <Key>
@@ -165,9 +135,7 @@ warning 6013: The table/view 'CT25Team22.dbo.ListProduct' does not have a primar
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="CT25Team22ModelStoreContainer">
-          <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrdersDetail" EntityType="Self.OrdersDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
@@ -196,24 +164,10 @@ warning 6013: The table/view 'CT25Team22.dbo.ListProduct' does not have a primar
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CT25Team22Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Account">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="usernname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="pwd" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="repwd" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="phanquyen" Type="Int32" />
-          <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="phone" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-        </EntityType>
         <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="MAKH" />
@@ -228,17 +182,6 @@ warning 6013: The table/view 'CT25Team22.dbo.ListProduct' does not have a primar
           <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_Customer_Order" FromRole="Customer" ToRole="Orders" />
-        </EntityType>
-        <EntityType Name="Employee">
-          <Key>
-            <PropertyRef Name="MaNV" />
-          </Key>
-          <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TenNV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="GioiTinh" Type="Int32" />
-          <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="DienThoai" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="NgaySinh" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -285,6 +228,7 @@ warning 6013: The table/view 'CT25Team22.dbo.ListProduct' does not have a primar
           <Property Name="small_img5" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="OrdersDetails" Relationship="Self.FK_Product_OrdersDetail" FromRole="Product" ToRole="OrdersDetail" />
           <NavigationProperty Name="ProductType" Relationship="Self.FK_Product_ProductType" FromRole="Product" ToRole="ProductType" />
+          <Property Name="old_price" Type="Double" />
         </EntityType>
         <EntityType Name="ProductType">
           <Key>
@@ -360,9 +304,7 @@ warning 6013: The table/view 'CT25Team22.dbo.ListProduct' does not have a primar
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="CT25Team22Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Accounts" EntityType="Self.Account" />
           <EntitySet Name="Customers" EntityType="Self.Customer" />
-          <EntitySet Name="Employees" EntityType="Self.Employee" />
           <EntitySet Name="Orders" EntityType="Self.Order" />
           <EntitySet Name="OrdersDetails" EntityType="Self.OrdersDetail" />
           <EntitySet Name="Products" EntityType="Self.Product" />
@@ -392,20 +334,6 @@ warning 6013: The table/view 'CT25Team22.dbo.ListProduct' does not have a primar
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="CT25Team22ModelStoreContainer" CdmEntityContainer="CT25Team22Entities">
-          <EntitySetMapping Name="Accounts">
-            <EntityTypeMapping TypeName="CT25Team22Model.Account">
-              <MappingFragment StoreEntitySet="Account">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="usernname" ColumnName="usernname" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="pwd" ColumnName="pwd" />
-                <ScalarProperty Name="repwd" ColumnName="repwd" />
-                <ScalarProperty Name="phanquyen" ColumnName="phanquyen" />
-                <ScalarProperty Name="address" ColumnName="address" />
-                <ScalarProperty Name="phone" ColumnName="phone" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Customers">
             <EntityTypeMapping TypeName="CT25Team22Model.Customer">
               <MappingFragment StoreEntitySet="Customer">
@@ -418,18 +346,6 @@ warning 6013: The table/view 'CT25Team22.dbo.ListProduct' does not have a primar
                 <ScalarProperty Name="phanquyen" ColumnName="phanquyen" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="username" ColumnName="username" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Employees">
-            <EntityTypeMapping TypeName="CT25Team22Model.Employee">
-              <MappingFragment StoreEntitySet="Employee">
-                <ScalarProperty Name="MaNV" ColumnName="MaNV" />
-                <ScalarProperty Name="TenNV" ColumnName="TenNV" />
-                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
-                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
-                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -459,6 +375,7 @@ warning 6013: The table/view 'CT25Team22.dbo.ListProduct' does not have a primar
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="CT25Team22Model.Product">
               <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="old_price" ColumnName="old_price" />
                 <ScalarProperty Name="id_Product" ColumnName="id_Product" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id_ProductType" ColumnName="id_ProductType" />

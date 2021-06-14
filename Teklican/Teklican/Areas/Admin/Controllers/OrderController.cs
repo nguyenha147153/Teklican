@@ -19,6 +19,7 @@ namespace Teklican.Areas.Admin.Controllers
                      {
                          id = or.id,
                          id_cus = (int)or.id_cus,
+                         addr_cus = cus.Address,
                          name_cus = cus.Fullname,
                          total = (decimal)or.total,
                          status = (bool)or.status,

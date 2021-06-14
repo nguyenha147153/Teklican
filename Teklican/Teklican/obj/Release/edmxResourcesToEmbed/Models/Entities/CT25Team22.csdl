@@ -1,18 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="CT25Team22Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Account">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="usernname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="pwd" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="repwd" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="phanquyen" Type="Int32" />
-    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="phone" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-  </EntityType>
   <EntityType Name="Customer">
     <Key>
       <PropertyRef Name="MAKH" />
@@ -27,17 +14,6 @@
     <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
     <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Orders" Relationship="Self.FK_Customer_Order" FromRole="Customer" ToRole="Orders" />
-  </EntityType>
-  <EntityType Name="Employee">
-    <Key>
-      <PropertyRef Name="MaNV" />
-    </Key>
-    <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="TenNV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="GioiTinh" Type="Int32" />
-    <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="DienThoai" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
   </EntityType>
   <EntityType Name="Order">
     <Key>
@@ -84,6 +60,7 @@
     <Property Name="small_img5" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="OrdersDetails" Relationship="Self.FK_Product_OrdersDetail" FromRole="Product" ToRole="OrdersDetail" />
     <NavigationProperty Name="ProductType" Relationship="Self.FK_Product_ProductType" FromRole="Product" ToRole="ProductType" />
+    <Property Name="old_price" Type="Double" />
   </EntityType>
   <EntityType Name="ProductType">
     <Key>
@@ -159,9 +136,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="CT25Team22Entities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Accounts" EntityType="Self.Account" />
     <EntitySet Name="Customers" EntityType="Self.Customer" />
-    <EntitySet Name="Employees" EntityType="Self.Employee" />
     <EntitySet Name="Orders" EntityType="Self.Order" />
     <EntitySet Name="OrdersDetails" EntityType="Self.OrdersDetail" />
     <EntitySet Name="Products" EntityType="Self.Product" />

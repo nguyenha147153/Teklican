@@ -1,7 +1,9 @@
 ﻿@model Teklican.Models.Entities.Product
 
 @{
-    ViewBag.Title = "Chi tiết sản phẩm";
+    ViewBag.Title = "Details";
+
+    ViewBag.Title = "Home Page";
     Teklican.Models.ModelView.CustomerView prof = null;
     if (Session["username"] != null) { prof = (Teklican.Models.ModelView.CustomerView)Session["username"]; }
 }
@@ -60,27 +62,27 @@
 <div class="small-container single-product">
     <div class="rowp">
         <div class="col-2">
-            <img src="~/images/@Html.DisplayFor(model => model.img)" id="ProductImg">
+            <img src="~/images/@Model.img" id="ProductImg">
             <div class="small-img-row">
                 <div class="small-img-col">
-                    <img src="~/images/ip12pm.jpg" class="small-img">
+                    <img src="~/images/@Model.small_img1" class="small-img">
                 </div>
                 <div class="small-img-col">
-                    <img src="~/images/12pmt-.png" class="small-img">
+                    <img src="~/images/@Model.small_img2" class="small-img">
                 </div>
                 <div class="small-img-col">
-                    <img src="~/images/12pmd.png" class="small-img">
+                    <img src="~/images/@Model.small_img3" class="small-img">
                 </div>
                 <div class="small-img-col">
-                    <img src="~/images/12pmg.png" class="small-img">
+                    <img src="~/images/@Model.small_img4" class="small-img">
                 </div>
             </div>
         </div>
         <div class="col-2">
             <p>Trang chủ</p>
-            <h1>@Html.DisplayFor(model => model.name)</h1>
-            <span class="price-old">33.990.000</span>
-            <h4>@Html.DisplayFor(model => model.price)</h4>
+            <h1>@Model.name</h1>
+            <span class="price-old">@string.Format("{0:#,##0 VNĐ}", @Model.old_price)</span>
+            <h4>@string.Format("{0:#,##0 VNĐ}", @Model.price)</h4>
             <div class="rating">
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star" aria-hidden="true"></i>
@@ -88,7 +90,7 @@
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star" aria-hidden="true"></i>
             </div>
-            <p>@Html.DisplayFor(model => model.description)</p>
+            <p>@Model.description</p>
             <select>
                 <option>Màu sắc</option>
                 <option>Blue</option>
@@ -132,7 +134,7 @@
                                 <img src="~/images/@item.img" alt="">
                             </a>
                             <h4><a href="@Url.Action("Details", "Home", new { id = item.id_Product })">@item.name</a></h4>
-                            <h3>@item.price</h3>
+                            <h3>@string.Format("{0:#,##0 VNĐ}", @item.price)</h3>
                             <div class="rating">
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>

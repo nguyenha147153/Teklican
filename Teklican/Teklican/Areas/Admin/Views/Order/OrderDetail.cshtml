@@ -63,7 +63,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     function deleteDetail(obj) {
-        if (confirm('Are you sure you want to delete this orderdetail?')) {
+        if (confirm('Bạn có chắc chắn muốn xóa đơn hàng này?')) {
             var id_orderdetail = $(obj).attr('data-id');
             var id_order = $(obj).attr('data-id_order');
             location.href = "@Url.Action("deleteOrderDetail")?id=" + id_orderdetail + "&id_order="+ id_order;

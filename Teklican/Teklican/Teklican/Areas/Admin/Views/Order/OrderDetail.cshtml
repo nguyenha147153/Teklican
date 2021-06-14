@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "OrderDetail";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="container col-12 centerPage">
+    <div class="tab-content" id="myTabContent">
+        <div style="margin-bottom: 15px;">
+            <button class="btn btn-danger" id="back">Back</button>
+        </div>
+        <div class="card-header">
+            <h5>Order</h5>
+        </div>
+        <div class="tab-pane fade active show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <table class="table_legenda" width="100%" border="1" height="10px">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Subtotal</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Session["listDetail"] != null)
+                    {
+                        var row = 1;
+                        var ListOrderDetail = (List<Teklican.Areas.Admin.Models.View.OrderDetailView>)Session["listDetail"];
+                        foreach (var item in ListOrderDetail)
+                        {
+                            <tr style="overflow-wrap: break-word; margin-bottom: 10px;">
+                                @* m-0 text-c-red *@
+                                @*class="text-right"*@
+                                <td>
+                                    <h6 class="m-0">@row</h6>
+                                </td>
+                                <td>
+                                    <h6 class="m-0">@item.name_product</h6>
+                                </td>
+                                <td>
+                                    <h6 class="m-0">@item.quantity</h6>
+                                </td>
+                                <td>
+                                    <h6 class="m-0">@item.price</h6>
+                                </td>
+                                <td>
+                                    <h6 class="m-0">@item.sub_total</h6>
+                                </td>
+                                <td><a href="@Url.Action("UpdateOrderDetail", new { id_orderdetail = item.id})">Edit</a>&nbsp;&nbsp;<a href="#" style="cursor: pointer;" onclick="deleteDetail(this);" data-id="@item.id" data-id_order="@item.id_order">Remove</a></td>
+                            </tr>
+                        }
+                    }
+
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    function deleteDetail(obj) {
+        if (confirm('Are you sure you want to delete this orderdetail?')) {
+            var id_orderdetail = $(obj).attr('data-id');
+            var id_order = $(obj).attr('data-id_order');
+            location.href = "@Url.Action("deleteOrderDetail")?id=" + id_orderdetail + "&id_order="+ id_order;
+        }
+    }
+    $('#back').click(function () {
+        location.href = "@Url.Action("index")";
+    })
+</script>
+
+

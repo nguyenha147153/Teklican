@@ -34,6 +34,7 @@ namespace Teklican.Models.Entities
         public string small_img3 { get; set; }
         public string small_img4 { get; set; }
         public string small_img5 { get; set; }
+        public Nullable<double> old_price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrdersDetail> OrdersDetails { get; set; }

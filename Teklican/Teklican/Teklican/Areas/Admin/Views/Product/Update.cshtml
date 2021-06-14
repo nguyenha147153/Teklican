@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="container col-11 centerPage">
+    <h5>Update Product</h5>
+    @if (Session["ProductUpdate"] != null)
+    {
+        var pro = (Teklican.Areas.Admin.Models.View.ProductView)Session["ProductUpdate"];
+        <form action="@Url.Action("UpdateProduct")" method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <input type="hidden" name="id" value="@pro.id_Product" />
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Name</label>
+                        <input type="text" class="form-control" name="name" placeholder="Enter name" value="@pro.name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Type</label>
+                        <select class="form-control" name="type">
+                            <option value="none">Choose Type</option>
+                            @if (Session["comboboxType"] != null)
+                            {
+                                var type = (List<Teklican.Models.Entities.ProductType>)Session["ComboboxType"];
+                                foreach (var item in type)
+                                {
+                                    if (item.id_ProductType == pro.id_ProductType)
+                                    {
+                                        <option value="@item.id_ProductType" selected>@item.name</option>
+                                    }
+                                    <option value="@item.id_ProductType">@item.name</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Price</label>
+                        <input type="number" class="form-control" name="price" placeholder="Enter price" value="@pro.price">
+                    </div>
+                    <div class="form-group form-check">
+                        @if (pro.status == true)
+                        {
+                            <input type="checkbox" name="status" class="form-check-input" id="exampleCheck1" checked>
+                        }
+                        else
+                        {
+                            <input type="checkbox" name="status" class="form-check-input" id="exampleCheck1">
+                        }
+                        <label class="form-check-label" for="exampleCheck1">Check Available</label>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Inventory</label>
+                        <input type="number" class="form-control" name="inventory" placeholder="Enter inventory" value="@pro.inventory">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Tax</label>
+                        <input type="number" class="form-control" name="tax" placeholder="Enter tax" value="@pro.tax">
+                    </div>
+                    <div class="form-group">
+                        <label>Image</label>
+                        <input type="file" class="form-control" name="file" placeholder="Text" value="@pro.img" onchange="changeimg(this);">
+                        <input type="hidden" name="nameImage" value="@pro.img" />
+                    </div>
+                    <div class="form-group">
+                        <img src="@Url.Content("~/images/")@pro.img" id="image"  alt="Alternate Text" style="width: 20%;"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Description</label>
+                        <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3">@pro.description</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="button" onclick="aaa();" class="btn btn-primary">Cancel</button>
+                </div>
+            </div>
+        </form>
+    }
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    function changeimg(obj) {
+        var file = $(obj).val();
+            if (file != "") {
+                var tmppath = URL.createObjectURL(event.target.files[0]);
+                $("#image").fadeIn("fast").attr('src', tmppath);
+            } else {
+                $("#image").fadeIn("fast").attr('src', "#");
+            }
+    }
+</script>
+

@@ -1,20 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="CT25Team22ModelStoreContainer" CdmEntityContainer="CT25Team22Entities">
-    <EntitySetMapping Name="Accounts">
-      <EntityTypeMapping TypeName="CT25Team22Model.Account">
-        <MappingFragment StoreEntitySet="Account">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="usernname" ColumnName="usernname" />
-          <ScalarProperty Name="email" ColumnName="email" />
-          <ScalarProperty Name="pwd" ColumnName="pwd" />
-          <ScalarProperty Name="repwd" ColumnName="repwd" />
-          <ScalarProperty Name="phanquyen" ColumnName="phanquyen" />
-          <ScalarProperty Name="address" ColumnName="address" />
-          <ScalarProperty Name="phone" ColumnName="phone" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Customers">
       <EntityTypeMapping TypeName="CT25Team22Model.Customer">
         <MappingFragment StoreEntitySet="Customer">
@@ -27,18 +13,6 @@
           <ScalarProperty Name="phanquyen" ColumnName="phanquyen" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="username" ColumnName="username" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Employees">
-      <EntityTypeMapping TypeName="CT25Team22Model.Employee">
-        <MappingFragment StoreEntitySet="Employee">
-          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
-          <ScalarProperty Name="TenNV" ColumnName="TenNV" />
-          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
-          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-          <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
-          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -68,6 +42,7 @@
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="CT25Team22Model.Product">
         <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="old_price" ColumnName="old_price" />
           <ScalarProperty Name="id_Product" ColumnName="id_Product" />
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="id_ProductType" ColumnName="id_ProductType" />

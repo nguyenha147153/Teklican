@@ -31,6 +31,7 @@
                 <thead>
                     <tr>
                         <th>Customer</th>
+                        <th>Address</th>
                         <th>Create Day</th>
                         <th>Total</th>
                         <th>Status</th>
@@ -43,33 +44,36 @@
                         var ListOrder = (List<Teklican.Areas.Admin.Models.View.OrderView>)Session["listSearchOrder"];
                         foreach (var item in ListOrder)
                         {
-                            <tr style="overflow-wrap: break-word; margin-bottom: 10px;">
-                                @* m-0 text-c-red *@
-                                @*class="text-right"*@
-                                <td>
-                                    <h6 class="m-0">@item.name_cus</h6>
-                                </td>
-                                <td>
-                                    <h6 class="m-0">@item.createDay</h6>
-                                </td>
-                                <td>
-                                    <h6 class="m-0">@item.total</h6>
-                                </td>
-                                @if (item.status == true)
-                                {
-                                    <td>
-                                        <h6 class="m-0">UnComplete</h6>
-                                    </td>
-                                }
-                                else
-                                {
-                                    <td>
-                                        <h6 class="m-0">Complete</h6>
-                                    </td>
-                                }
+                    <tr style="overflow-wrap: break-word; margin-bottom: 10px;">
+                        @* m-0 text-c-red *@
+                        @*class="text-right"*@
+                        <td>
+                            <h6 class="m-0">@item.name_cus</h6>
+                        </td>
+                        <td>
+                            <h6 class="m-0">@item.addr_cus</h6>
+                        </td>
+                        <td>
+                            <h6 class="m-0">@item.createDay</h6>
+                        </td>
+                        <td>
+                            <h6 class="m-0">@item.total</h6>
+                        </td>
+                        @if (item.status == true)
+                        {
+                            <td>
+                                <h6 class="m-0">UnComplete</h6>
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                <h6 class="m-0">Complete</h6>
+                            </td>
+                        }
 
-                                <td><a href="@Url.Action("OrderDetail", new { id_order = item.id})">View</a>&nbsp;&nbsp;<a href="@Url.Action("CompleteOrder", new { id_order = item.id})" style="cursor: pointer;" onclick="deleteProduct(this);" data-id="@item.id">Complete</a></td>
-                            </tr>
+                        <td><a href="@Url.Action("OrderDetail", new { id_order = item.id})">View</a>&nbsp;&nbsp;<a href="@Url.Action("CompleteOrder", new { id_order = item.id})" style="cursor: pointer;" onclick="deleteProduct(this);" data-id="@item.id">Complete</a></td>
+                    </tr>
                         }
                         Session["listSearchOrder"] = null;
                     }
@@ -78,33 +82,36 @@
                         var ListOrder = (List<Teklican.Areas.Admin.Models.View.OrderView>)Session["listOrder"];
                         foreach (var item in ListOrder)
                         {
-                            <tr style="overflow-wrap: break-word; margin-bottom: 10px;">
-                                @* m-0 text-c-red *@
-                                @*class="text-right"*@
-                                <td>
-                                    <h6 class="m-0">@item.name_cus</h6>
-                                </td>
-                                <td>
-                                    <h6 class="m-0">@item.createDay</h6>
-                                </td>
-                                <td>
-                                    <h6 class="m-0">@item.total</h6>
-                                </td>
-                                @if (item.status == true)
-                                {
-                                    <td>
-                                        <h6 class="m-0">UnComplete</h6>
-                                    </td>
-                                }
-                                else
-                                {
-                                    <td>
-                                        <h6 class="m-0">Complete</h6>
-                                    </td>
-                                }
+                <tr style="overflow-wrap: break-word; margin-bottom: 10px;">
+                    @* m-0 text-c-red *@
+                    @*class="text-right"*@
+                    <td>
+                        <h6 class="m-0">@item.name_cus</h6>
+                    </td>
+                    <td>
+                        <h6 class="m-0">@item.addr_cus</h6>
+                    </td>
+                    <td>
+                        <h6 class="m-0">@item.createDay</h6>
+                    </td>
+                    <td>
+                        <h6 class="m-0">@item.total</h6>
+                    </td>
+                    @if (item.status == true)
+                    {
+                        <td>
+                            <h6 class="m-0">UnComplete</h6>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <h6 class="m-0">Complete</h6>
+                        </td>
+                    }
 
-                                <td><a href="@Url.Action("OrderDetail", new { id_order = item.id})">View</a>&nbsp;&nbsp;<a href="@Url.Action("CompleteOrder", new { id_order = item.id})" style="cursor: pointer;" onclick="deleteProduct(this);" data-id="@item.id">Complete</a></td>
-                            </tr>
+                    <td><a href="@Url.Action("OrderDetail", new { id_order = item.id})">View</a>&nbsp;&nbsp;<a href="@Url.Action("CompleteOrder", new { id_order = item.id})" style="cursor: pointer;" onclick="deleteProduct(this);" data-id="@item.id">Complete</a></td>
+                </tr>
                         }
                     }
 

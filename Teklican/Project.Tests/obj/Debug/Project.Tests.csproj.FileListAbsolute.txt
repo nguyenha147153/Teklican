@@ -82,3 +82,5 @@ C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Project.Tests\obj\Deb
 C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Project.Tests\obj\Debug\Project.Tests.csproj.CopyComplete
 C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Project.Tests\obj\Debug\Project.Tests.dll
 C:\Users\tienb\OneDrive - Van Lang University\WEB\Teklican\Project.Tests\obj\Debug\Project.Tests.pdb
+D:\Test4\Teklican\Project.Tests\obj\Debug\Project.Tests.csprojAssemblyReference.cache
+D:\Test4\Teklican\Project.Tests\obj\Debug\Project.Tests.csproj.CoreCompileInputs.cache

@@ -1,7 +1,7 @@
-﻿    
+﻿@using Teklican.Models.Entities;
 
 @{
-    ViewBag.Title = "Teklican | Bán điện thoại chính hãng";
+    ViewBag.Title = "Home Page";
     Teklican.Models.ModelView.CustomerView prof = null;
     if (Session["username"] != null) { prof = (Teklican.Models.ModelView.CustomerView)Session["username"]; }
 }
@@ -36,7 +36,7 @@
                         @if (Session["username"] != null)
                         {
                             <a><i class="fa fa-user"></i></a>@Html.ActionLink(prof.Fullname, "Dangnhap", "Home")
-                            <div class="sub-menu-1">
+                            <div class="sub-menu-1">    
                                 <ul>
                                     <li><a href="@Url.Action("UserProfile")">Thông tin</a></li>
                                     <li><a href="@Url.Action("Changepwd")">Đổi mật khẩu</a></li>

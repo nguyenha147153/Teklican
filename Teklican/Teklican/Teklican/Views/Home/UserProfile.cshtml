@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "UserProfile";
+    Teklican.Models.ModelView.CustomerView us = null;
+    if (Session["username"] != null) { us = (Teklican.Models.ModelView.CustomerView)Session["username"]; }
+
+}
+
+<h2>Thông tin cá nhân</h2>
+@if (Session["username"] != null)
+{
+    <div>Username: @us.username</div>
+    <div>Email: @us.Email</div>
+    <div>Địa chỉ: @us.Address</div>
+    <div>Số điện thoại: @us.Phone</div>
+}
+else
+{
+    <div>Vui lòng đăng nhập</div>
+}
+
+

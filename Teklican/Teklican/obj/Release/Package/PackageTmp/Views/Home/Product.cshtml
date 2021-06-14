@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Tất cả sản phẩm";
+    ViewBag.Title = "Home Page";
     Teklican.Models.ModelView.CustomerView prof = null;
     if (Session["username"] != null) { prof = (Teklican.Models.ModelView.CustomerView)Session["username"]; }
 }
@@ -68,7 +68,7 @@
                         <img src="~/images/@item.img" alt="">
                     </a>
                     <h4><a href="@Url.Action("Details", "Home", new { id = item.id_Product })">@item.name</a></h4>
-                    <h3>@item.price</h3>
+                    <h3>@string.Format("{0:#,##0 VNĐ}", @item.price)</h3>
                     <div class="rating">
                         <i class="fa fa-star" aria-hidden="true"></i>
                         <i class="fa fa-star" aria-hidden="true"></i>
