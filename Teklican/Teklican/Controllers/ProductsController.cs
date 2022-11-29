@@ -12,7 +12,7 @@ namespace Teklican.Controllers
 {
     public class ProductsController : Controller
     {
-        private CT25Team22Entities db = new CT25Team22Entities();
+        private TeklicanEntities db = new TeklicanEntities();
 
         // GET: Products
         public ActionResult Index()

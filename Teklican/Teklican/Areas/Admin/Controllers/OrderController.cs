@@ -8,7 +8,7 @@ namespace Teklican.Areas.Admin.Controllers
 {
     public class OrderController : Controller
     {
-        Teklican.Models.Entities.CT25Team22Entities db = new Teklican.Models.Entities.CT25Team22Entities();
+        Teklican.Models.Entities.TeklicanEntities db = new Teklican.Models.Entities.TeklicanEntities();
         // GET: Admin/Order
         public ActionResult Index()
         {

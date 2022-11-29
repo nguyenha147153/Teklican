@@ -17,7 +17,7 @@ namespace Teklican.Controllers
         
         public ActionResult Index()
         {
-            CT25Team22Entities db = new CT25Team22Entities();
+            TeklicanEntities db = new TeklicanEntities();
             var q = (from Product in db.Products
                      join ProductType in db.ProductTypes
                      on Product.id_ProductType equals ProductType.id_ProductType
@@ -40,7 +40,7 @@ namespace Teklican.Controllers
         }
         public ActionResult Details(int? id)
         {
-            CT25Team22Entities db = new CT25Team22Entities();
+            TeklicanEntities db = new TeklicanEntities();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -60,7 +60,7 @@ namespace Teklican.Controllers
         }
         public ActionResult Apple()
         {
-            CT25Team22Entities db = new CT25Team22Entities();
+            TeklicanEntities db = new TeklicanEntities();
             var q = (from Product in db.Products
                      select new Models.ModelView.ProductView
                      {
@@ -100,7 +100,7 @@ namespace Teklican.Controllers
         }
         public ActionResult Product()
         {
-            CT25Team22Entities db = new CT25Team22Entities();
+            TeklicanEntities db = new TeklicanEntities();
             var q = (from Product in db.Products
                      select new Models.ModelView.ProductView
                      {
@@ -123,7 +123,7 @@ namespace Teklican.Controllers
         }
         public ActionResult Search()
         {
-            CT25Team22Entities db = new CT25Team22Entities();
+            TeklicanEntities db = new TeklicanEntities();
             var name = Request.Form["search"];
             var p = (from Product in db.Products
                      where Product.name.Contains(name)
@@ -152,7 +152,7 @@ namespace Teklican.Controllers
         {
             var username = Request.Form["uname"];
             var pass = Request.Form["password"];
-            Models.Entities.CT25Team22Entities log = new Models.Entities.CT25Team22Entities();
+            Models.Entities.TeklicanEntities log = new Models.Entities.TeklicanEntities();
             var tien = log.Customers.Where(d => d.username == username && d.Password == pass).Count();
             var users = (from pq in log.Customers
                          join pqs in log.AccountsTypes on pq.phanquyen equals pqs.id
@@ -204,7 +204,7 @@ namespace Teklican.Controllers
             {
                 return RedirectToAction("Dangnhap");
             }
-            Models.Entities.CT25Team22Entities db = new CT25Team22Entities();
+            Models.Entities.TeklicanEntities db = new TeklicanEntities();
 
             var listCart = (List<Models.ModelView.Cart>)Session["Cart"];
             decimal total = 0;
@@ -231,7 +231,7 @@ namespace Teklican.Controllers
                 db.SaveChanges();
             }
 
-            return View();
+            return RedirectToAction("Index");
         }
 
         public ActionResult checkout()
@@ -261,7 +261,7 @@ namespace Teklican.Controllers
             var pass = Request.Form["pass"];
             try
             {
-                Models.Entities.CT25Team22Entities db = new CT25Team22Entities();
+                Models.Entities.TeklicanEntities db = new TeklicanEntities();
                 Customer ac = new Customer();
                 ac.Fullname = fullname;
                 ac.username = username;
@@ -292,7 +292,7 @@ namespace Teklican.Controllers
         }
         public bool checkUsername(string username)
         {
-            Models.Entities.CT25Team22Entities database = new Models.Entities.CT25Team22Entities();
+            Models.Entities.TeklicanEntities database = new Models.Entities.TeklicanEntities();
             var q = database.Customers.Where(d => d.username == username).Count();
             if(q == 0)
             {
@@ -305,7 +305,7 @@ namespace Teklican.Controllers
         }
         public bool checkPhone(string phone)
         {
-            Models.Entities.CT25Team22Entities database = new Models.Entities.CT25Team22Entities();
+            Models.Entities.TeklicanEntities database = new Models.Entities.TeklicanEntities();
             var q = database.Customers.Where(d => d.Phone == phone).Count();
             if (q == 0)
             {
@@ -318,7 +318,7 @@ namespace Teklican.Controllers
         }
         public bool checkEmail(string email)
         {
-            Models.Entities.CT25Team22Entities database = new Models.Entities.CT25Team22Entities();
+            Models.Entities.TeklicanEntities database = new Models.Entities.TeklicanEntities();
             var q = database.Customers.Where(d => d.Email == email).Count();
             if (q == 0)
             {

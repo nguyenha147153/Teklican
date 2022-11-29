@@ -20,7 +20,7 @@
             foreach (var item in listCart)
             {
                 total += item.sub_total;
-                Teklican.Models.Entities.CT25Team22Entities db = new Teklican.Models.Entities.CT25Team22Entities();
+                Teklican.Models.Entities.TeklicanEntities db = new Teklican.Models.Entities.TeklicanEntities();
                 var pro = db.Products.Where(d => d.id_Product == item.id_product).FirstOrDefault();
                 <tr id="c-pds">
                     <td>

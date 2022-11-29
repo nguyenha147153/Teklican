@@ -9,7 +9,7 @@ namespace Teklican.Areas.Admin.Controllers
 {
     public class ProductController : Controller
     {
-        Teklican.Models.Entities.CT25Team22Entities db = new Teklican.Models.Entities.CT25Team22Entities();
+        Teklican.Models.Entities.TeklicanEntities db = new Teklican.Models.Entities.TeklicanEntities();
         // GET: Admin/Product
         public ActionResult Index()
         {

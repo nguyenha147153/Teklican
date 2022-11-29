@@ -4,69 +4,39 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="CT25Team22Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Account">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="usernname" Type="varchar" MaxLength="20" />
-          <Property Name="email" Type="nvarchar" MaxLength="50" />
-          <Property Name="pwd" Type="nvarchar" MaxLength="30" />
-          <Property Name="repwd" Type="nvarchar" MaxLength="30" />
-          <Property Name="phanquyen" Type="int" />
-          <Property Name="address" Type="nvarchar" MaxLength="100" />
-          <Property Name="phone" Type="char" MaxLength="10" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CT25Team22.dbo.AccountsType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="AccountsType">
+      <Schema Namespace="TeklicanModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AccountsTypes">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="20" />
         </EntityType>
-        <EntityType Name="Customer">
+        <EntityType Name="Customers">
           <Key>
-            <PropertyRef Name="MaKH" />
+            <PropertyRef Name="MAKH" />
           </Key>
-          <Property Name="MaKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="HoTen" Type="nvarchar" MaxLength="100" />
-          <Property Name="GioiTinh" Type="varchar" MaxLength="10" />
-          <Property Name="DienThoai" Type="varchar" MaxLength="10" />
-          <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
-          <Property Name="NgaySinh" Type="date" />
+          <Property Name="MAKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fullname" Type="nvarchar" MaxLength="100" />
+          <Property Name="Phone" Type="varchar" MaxLength="10" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Repass" Type="nvarchar" MaxLength="50" />
+          <Property Name="phanquyen" Type="int" />
+          <Property Name="Email" Type="varchar" MaxLength="150" />
+          <Property Name="username" Type="varchar" MaxLength="20" />
         </EntityType>
-        <EntityType Name="Employee">
-          <Key>
-            <PropertyRef Name="MaNV" />
-          </Key>
-          <Property Name="MaNV" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="TenNV" Type="nvarchar" MaxLength="100" />
-          <Property Name="GioiTinh" Type="int" />
-          <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
-          <Property Name="DienThoai" Type="varchar" MaxLength="10" />
-          <Property Name="NgaySinh" Type="date" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'CT25Team22.dbo.ListProduct' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ListProduct">
-          <Property Name="MaHang" Type="nvarchar" MaxLength="50" />
-          <Property Name="TenHang" Type="varchar" MaxLength="50" />
-          <Property Name="DongSP" Type="varchar" MaxLength="50" />
-        </EntityType>-->
         <EntityType Name="Orders">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_cus" Type="int" />
-          <Property Name="total" Type="float" />
+          <Property Name="total" Type="decimal" Precision="18" Scale="0" />
           <Property Name="create_day" Type="datetime" />
           <Property Name="status" Type="bit" />
         </EntityType>
-        <EntityType Name="OrdersDetail">
+        <EntityType Name="OrdersDetails">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -74,17 +44,17 @@ warning 6013: The table/view 'CT25Team22.dbo.ListProduct' does not have a primar
           <Property Name="id_order" Type="int" />
           <Property Name="id_product" Type="int" />
           <Property Name="quantity" Type="int" />
-          <Property Name="sub_total" Type="float" />
+          <Property Name="sub_total" Type="decimal" Precision="18" Scale="0" />
           <Property Name="status" Type="bit" />
         </EntityType>
-        <EntityType Name="Product">
+        <EntityType Name="Products">
           <Key>
             <PropertyRef Name="id_Product" />
           </Key>
           <Property Name="id_Product" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar(max)" />
           <Property Name="id_ProductType" Type="int" />
-          <Property Name="price" Type="money" />
+          <Property Name="price" Type="decimal" Precision="18" Scale="0" />
           <Property Name="description" Type="nvarchar(max)" />
           <Property Name="status" Type="bit" />
           <Property Name="inventory" Type="int" />
@@ -95,8 +65,9 @@ warning 6013: The table/view 'CT25Team22.dbo.ListProduct' does not have a primar
           <Property Name="small_img3" Type="nchar" MaxLength="50" />
           <Property Name="small_img4" Type="nchar" MaxLength="50" />
           <Property Name="small_img5" Type="nchar" MaxLength="50" />
+          <Property Name="old_price" Type="float" />
         </EntityType>
-        <EntityType Name="ProductType">
+        <EntityType Name="ProductTypes">
           <Key>
             <PropertyRef Name="id_ProductType" />
           </Key>
@@ -114,11 +85,11 @@ warning 6013: The table/view 'CT25Team22.dbo.ListProduct' does not have a primar
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <Association Name="FK_Customer_Order">
-          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
           <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Customer">
-              <PropertyRef Name="MaKH" />
+            <Principal Role="Customers">
+              <PropertyRef Name="MAKH" />
             </Principal>
             <Dependent Role="Orders">
               <PropertyRef Name="id_cus" />
@@ -127,138 +98,91 @@ warning 6013: The table/view 'CT25Team22.dbo.ListProduct' does not have a primar
         </Association>
         <Association Name="FK_Order_OrdersDetail">
           <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
-          <End Role="OrdersDetail" Type="Self.OrdersDetail" Multiplicity="*" />
+          <End Role="OrdersDetails" Type="Self.OrdersDetails" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="OrdersDetail">
+            <Dependent Role="OrdersDetails">
               <PropertyRef Name="id_order" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Product_OrdersDetail">
-          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
-          <End Role="OrdersDetail" Type="Self.OrdersDetail" Multiplicity="*" />
+          <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+          <End Role="OrdersDetails" Type="Self.OrdersDetails" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Product">
+            <Principal Role="Products">
               <PropertyRef Name="id_Product" />
             </Principal>
-            <Dependent Role="OrdersDetail">
+            <Dependent Role="OrdersDetails">
               <PropertyRef Name="id_product" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Product_ProductType">
-          <End Role="ProductType" Type="Self.ProductType" Multiplicity="0..1" />
-          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <End Role="ProductTypes" Type="Self.ProductTypes" Multiplicity="0..1" />
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="ProductType">
+            <Principal Role="ProductTypes">
               <PropertyRef Name="id_ProductType" />
             </Principal>
-            <Dependent Role="Product">
+            <Dependent Role="Products">
               <PropertyRef Name="id_ProductType" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="CT25Team22ModelStoreContainer">
-          <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+        <EntityContainer Name="TeklicanModelStoreContainer">
+          <EntitySet Name="AccountsTypes" EntityType="Self.AccountsTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="OrdersDetail" EntityType="Self.OrdersDetail" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ProductType" EntityType="Self.ProductType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrdersDetails" EntityType="Self.OrdersDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductTypes" EntityType="Self.ProductTypes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AccountsType" EntityType="Self.AccountsType" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [AccountsType].[id] AS [id], 
-    [AccountsType].[name] AS [name]
-    FROM [dbo].[AccountsType] AS [AccountsType]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_Customer_Order" Association="Self.FK_Customer_Order">
-            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Customers" EntitySet="Customers" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
           <AssociationSet Name="FK_Order_OrdersDetail" Association="Self.FK_Order_OrdersDetail">
             <End Role="Orders" EntitySet="Orders" />
-            <End Role="OrdersDetail" EntitySet="OrdersDetail" />
+            <End Role="OrdersDetails" EntitySet="OrdersDetails" />
           </AssociationSet>
           <AssociationSet Name="FK_Product_OrdersDetail" Association="Self.FK_Product_OrdersDetail">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="OrdersDetail" EntitySet="OrdersDetail" />
+            <End Role="Products" EntitySet="Products" />
+            <End Role="OrdersDetails" EntitySet="OrdersDetails" />
           </AssociationSet>
           <AssociationSet Name="FK_Product_ProductType" Association="Self.FK_Product_ProductType">
-            <End Role="ProductType" EntitySet="ProductType" />
-            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductTypes" EntitySet="ProductTypes" />
+            <End Role="Products" EntitySet="Products" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="CT25Team22Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="CT25Team22Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Accounts" EntityType="CT25Team22Model.Account" />
-          <EntitySet Name="Customers" EntityType="CT25Team22Model.Customer" />
-          <EntitySet Name="Employees" EntityType="CT25Team22Model.Employee" />
-          <EntitySet Name="Orders" EntityType="CT25Team22Model.Order" />
-          <EntitySet Name="OrdersDetails" EntityType="CT25Team22Model.OrdersDetail" />
-          <EntitySet Name="Products" EntityType="CT25Team22Model.Product" />
-          <EntitySet Name="ProductTypes" EntityType="CT25Team22Model.ProductType" />
-          <EntitySet Name="sysdiagrams" EntityType="CT25Team22Model.sysdiagram" />
-          <EntitySet Name="AccountsTypes" EntityType="CT25Team22Model.AccountsType" />
-          <AssociationSet Name="FK_Customer_Order" Association="CT25Team22Model.FK_Customer_Order">
-            <End Role="Customer" EntitySet="Customers" />
-            <End Role="Order" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Order_OrdersDetail" Association="CT25Team22Model.FK_Order_OrdersDetail">
-            <End Role="Order" EntitySet="Orders" />
-            <End Role="OrdersDetail" EntitySet="OrdersDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Product_OrdersDetail" Association="CT25Team22Model.FK_Product_OrdersDetail">
-            <End Role="Product" EntitySet="Products" />
-            <End Role="OrdersDetail" EntitySet="OrdersDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Product_ProductType" Association="CT25Team22Model.FK_Product_ProductType">
-            <End Role="ProductType" EntitySet="ProductTypes" />
-            <End Role="Product" EntitySet="Products" />
-          </AssociationSet>
-        </EntityContainer>
-        <EntityType Name="Account">
+      <Schema Namespace="TeklicanModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AccountsType">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="usernname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="pwd" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="repwd" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="phanquyen" Type="Int32" />
-          <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="phone" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
-            <PropertyRef Name="MaKH" />
+            <PropertyRef Name="MAKH" />
           </Key>
-          <Property Name="MaKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="HoTen" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="GioiTinh" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="DienThoai" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="NgaySinh" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Orders" Relationship="CT25Team22Model.FK_Customer_Order" FromRole="Customer" ToRole="Order" />
-        </EntityType>
-        <EntityType Name="Employee">
-          <Key>
-            <PropertyRef Name="MaNV" />
-          </Key>
-          <Property Name="MaNV" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="TenNV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="GioiTinh" Type="Int32" />
-          <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="DienThoai" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+          <Property Name="MAKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fullname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Repass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phanquyen" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Customer_Order" FromRole="Customers" ToRole="Orders" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -266,11 +190,11 @@ warning 6013: The table/view 'CT25Team22.dbo.ListProduct' does not have a primar
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_cus" Type="Int32" />
-          <Property Name="total" Type="Double" />
+          <Property Name="total" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="create_day" Type="DateTime" Precision="3" />
           <Property Name="status" Type="Boolean" />
-          <NavigationProperty Name="Customer" Relationship="CT25Team22Model.FK_Customer_Order" FromRole="Order" ToRole="Customer" />
-          <NavigationProperty Name="OrdersDetails" Relationship="CT25Team22Model.FK_Order_OrdersDetail" FromRole="Order" ToRole="OrdersDetail" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_Customer_Order" FromRole="Orders" ToRole="Customers" />
+          <NavigationProperty Name="OrdersDetails" Relationship="Self.FK_Order_OrdersDetail" FromRole="Orders" ToRole="OrdersDetails" />
         </EntityType>
         <EntityType Name="OrdersDetail">
           <Key>
@@ -280,10 +204,10 @@ warning 6013: The table/view 'CT25Team22.dbo.ListProduct' does not have a primar
           <Property Name="id_order" Type="Int32" />
           <Property Name="id_product" Type="Int32" />
           <Property Name="quantity" Type="Int32" />
-          <Property Name="sub_total" Type="Double" />
+          <Property Name="sub_total" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="status" Type="Boolean" />
-          <NavigationProperty Name="Order" Relationship="CT25Team22Model.FK_Order_OrdersDetail" FromRole="OrdersDetail" ToRole="Order" />
-          <NavigationProperty Name="Product" Relationship="CT25Team22Model.FK_Product_OrdersDetail" FromRole="OrdersDetail" ToRole="Product" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_Order_OrdersDetail" FromRole="OrdersDetails" ToRole="Orders" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Product_OrdersDetail" FromRole="OrdersDetails" ToRole="Products" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -292,7 +216,7 @@ warning 6013: The table/view 'CT25Team22.dbo.ListProduct' does not have a primar
           <Property Name="id_Product" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="id_ProductType" Type="Int32" />
-          <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="price" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="status" Type="Boolean" />
           <Property Name="inventory" Type="Int32" />
@@ -303,8 +227,9 @@ warning 6013: The table/view 'CT25Team22.dbo.ListProduct' does not have a primar
           <Property Name="small_img3" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="small_img4" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="small_img5" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="OrdersDetails" Relationship="CT25Team22Model.FK_Product_OrdersDetail" FromRole="Product" ToRole="OrdersDetail" />
-          <NavigationProperty Name="ProductType" Relationship="CT25Team22Model.FK_Product_ProductType" FromRole="Product" ToRole="ProductType" />
+          <Property Name="old_price" Type="Double" />
+          <NavigationProperty Name="OrdersDetails" Relationship="Self.FK_Product_OrdersDetail" FromRole="Products" ToRole="OrdersDetails" />
+          <NavigationProperty Name="ProductType" Relationship="Self.FK_Product_ProductType" FromRole="Products" ToRole="ProductTypes" />
         </EntityType>
         <EntityType Name="ProductType">
           <Key>
@@ -312,184 +237,180 @@ warning 6013: The table/view 'CT25Team22.dbo.ListProduct' does not have a primar
           </Key>
           <Property Name="id_ProductType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Products" Relationship="CT25Team22Model.FK_Product_ProductType" FromRole="ProductType" ToRole="Product" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_Product_ProductType" FromRole="ProductTypes" ToRole="Products" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="principal_id" Type="Int32" Nullable="false" />
           <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <EntityType Name="AccountsType">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-        </EntityType>
         <Association Name="FK_Customer_Order">
-          <End Type="CT25Team22Model.Customer" Role="Customer" Multiplicity="0..1" />
-          <End Type="CT25Team22Model.Order" Role="Order" Multiplicity="*" />
+          <End Role="Customers" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Customer">
-              <PropertyRef Name="MaKH" />
+            <Principal Role="Customers">
+              <PropertyRef Name="MAKH" />
             </Principal>
-            <Dependent Role="Order">
+            <Dependent Role="Orders">
               <PropertyRef Name="id_cus" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_OrdersDetail">
-          <End Type="CT25Team22Model.Order" Role="Order" Multiplicity="0..1" />
-          <End Type="CT25Team22Model.OrdersDetail" Role="OrdersDetail" Multiplicity="*" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="0..1" />
+          <End Role="OrdersDetails" Type="Self.OrdersDetail" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Order">
+            <Principal Role="Orders">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="OrdersDetail">
+            <Dependent Role="OrdersDetails">
               <PropertyRef Name="id_order" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Product_OrdersDetail">
-          <End Type="CT25Team22Model.Product" Role="Product" Multiplicity="0..1" />
-          <End Type="CT25Team22Model.OrdersDetail" Role="OrdersDetail" Multiplicity="*" />
+          <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="OrdersDetails" Type="Self.OrdersDetail" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Product">
+            <Principal Role="Products">
               <PropertyRef Name="id_Product" />
             </Principal>
-            <Dependent Role="OrdersDetail">
+            <Dependent Role="OrdersDetails">
               <PropertyRef Name="id_product" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Product_ProductType">
-          <End Type="CT25Team22Model.ProductType" Role="ProductType" Multiplicity="0..1" />
-          <End Type="CT25Team22Model.Product" Role="Product" Multiplicity="*" />
+          <End Role="ProductTypes" Type="Self.ProductType" Multiplicity="0..1" />
+          <End Role="Products" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="ProductType">
+            <Principal Role="ProductTypes">
               <PropertyRef Name="id_ProductType" />
             </Principal>
-            <Dependent Role="Product">
+            <Dependent Role="Products">
               <PropertyRef Name="id_ProductType" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="TeklicanEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AccountsTypes" EntityType="Self.AccountsType" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="OrdersDetails" EntityType="Self.OrdersDetail" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="ProductTypes" EntityType="Self.ProductType" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <AssociationSet Name="FK_Customer_Order" Association="Self.FK_Customer_Order">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_OrdersDetail" Association="Self.FK_Order_OrdersDetail">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrdersDetails" EntitySet="OrdersDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_OrdersDetail" Association="Self.FK_Product_OrdersDetail">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="OrdersDetails" EntitySet="OrdersDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ProductType" Association="Self.FK_Product_ProductType">
+            <End Role="ProductTypes" EntitySet="ProductTypes" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CT25Team22ModelStoreContainer" CdmEntityContainer="CT25Team22Entities">
-          <EntitySetMapping Name="Accounts">
-            <EntityTypeMapping TypeName="CT25Team22Model.Account">
-              <MappingFragment StoreEntitySet="Account">
-                <ScalarProperty Name="phone" ColumnName="phone" />
-                <ScalarProperty Name="address" ColumnName="address" />
-                <ScalarProperty Name="phanquyen" ColumnName="phanquyen" />
-                <ScalarProperty Name="repwd" ColumnName="repwd" />
-                <ScalarProperty Name="pwd" ColumnName="pwd" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="usernname" ColumnName="usernname" />
+        <EntityContainerMapping StorageEntityContainer="TeklicanModelStoreContainer" CdmEntityContainer="TeklicanEntities">
+          <EntitySetMapping Name="AccountsTypes">
+            <EntityTypeMapping TypeName="TeklicanModel.AccountsType">
+              <MappingFragment StoreEntitySet="AccountsTypes">
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Customers">
-            <EntityTypeMapping TypeName="CT25Team22Model.Customer">
-              <MappingFragment StoreEntitySet="Customer">
-                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
-                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
-                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
-                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
-                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Employees">
-            <EntityTypeMapping TypeName="CT25Team22Model.Employee">
-              <MappingFragment StoreEntitySet="Employee">
-                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
-                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
-                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
-                <ScalarProperty Name="TenNV" ColumnName="TenNV" />
-                <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+            <EntityTypeMapping TypeName="TeklicanModel.Customer">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Repass" ColumnName="Repass" />
+                <ScalarProperty Name="phanquyen" ColumnName="phanquyen" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="username" ColumnName="username" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Orders">
-            <EntityTypeMapping TypeName="CT25Team22Model.Order">
+            <EntityTypeMapping TypeName="TeklicanModel.Order">
               <MappingFragment StoreEntitySet="Orders">
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="create_day" ColumnName="create_day" />
-                <ScalarProperty Name="total" ColumnName="total" />
-                <ScalarProperty Name="id_cus" ColumnName="id_cus" />
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_cus" ColumnName="id_cus" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="create_day" ColumnName="create_day" />
+                <ScalarProperty Name="status" ColumnName="status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OrdersDetails">
-            <EntityTypeMapping TypeName="CT25Team22Model.OrdersDetail">
-              <MappingFragment StoreEntitySet="OrdersDetail">
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="sub_total" ColumnName="sub_total" />
-                <ScalarProperty Name="quantity" ColumnName="quantity" />
-                <ScalarProperty Name="id_product" ColumnName="id_product" />
-                <ScalarProperty Name="id_order" ColumnName="id_order" />
+            <EntityTypeMapping TypeName="TeklicanModel.OrdersDetail">
+              <MappingFragment StoreEntitySet="OrdersDetails">
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_order" ColumnName="id_order" />
+                <ScalarProperty Name="id_product" ColumnName="id_product" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="sub_total" ColumnName="sub_total" />
+                <ScalarProperty Name="status" ColumnName="status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="CT25Team22Model.Product">
-              <MappingFragment StoreEntitySet="Product">
-                <ScalarProperty Name="small_img5" ColumnName="small_img5" />
-                <ScalarProperty Name="small_img4" ColumnName="small_img4" />
-                <ScalarProperty Name="small_img3" ColumnName="small_img3" />
-                <ScalarProperty Name="small_img2" ColumnName="small_img2" />
-                <ScalarProperty Name="small_img1" ColumnName="small_img1" />
-                <ScalarProperty Name="tax" ColumnName="tax" />
-                <ScalarProperty Name="img" ColumnName="img" />
-                <ScalarProperty Name="inventory" ColumnName="inventory" />
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="description" ColumnName="description" />
-                <ScalarProperty Name="price" ColumnName="price" />
-                <ScalarProperty Name="id_ProductType" ColumnName="id_ProductType" />
-                <ScalarProperty Name="name" ColumnName="name" />
+            <EntityTypeMapping TypeName="TeklicanModel.Product">
+              <MappingFragment StoreEntitySet="Products">
                 <ScalarProperty Name="id_Product" ColumnName="id_Product" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id_ProductType" ColumnName="id_ProductType" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="inventory" ColumnName="inventory" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="tax" ColumnName="tax" />
+                <ScalarProperty Name="small_img1" ColumnName="small_img1" />
+                <ScalarProperty Name="small_img2" ColumnName="small_img2" />
+                <ScalarProperty Name="small_img3" ColumnName="small_img3" />
+                <ScalarProperty Name="small_img4" ColumnName="small_img4" />
+                <ScalarProperty Name="small_img5" ColumnName="small_img5" />
+                <ScalarProperty Name="old_price" ColumnName="old_price" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductTypes">
-            <EntityTypeMapping TypeName="CT25Team22Model.ProductType">
-              <MappingFragment StoreEntitySet="ProductType">
-                <ScalarProperty Name="name" ColumnName="name" />
+            <EntityTypeMapping TypeName="TeklicanModel.ProductType">
+              <MappingFragment StoreEntitySet="ProductTypes">
                 <ScalarProperty Name="id_ProductType" ColumnName="id_ProductType" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="CT25Team22Model.sysdiagram">
+            <EntityTypeMapping TypeName="TeklicanModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="AccountsTypes">
-            <EntityTypeMapping TypeName="CT25Team22Model.AccountsType">
-              <MappingFragment StoreEntitySet="AccountsType">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

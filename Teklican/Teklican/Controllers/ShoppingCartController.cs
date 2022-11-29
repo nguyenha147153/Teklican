@@ -12,7 +12,7 @@ namespace Teklican.Controllers
 {
     public class ShoppingCartController : Controller
     {
-        private CT25Team22Entities db = new CT25Team22Entities();
+        private TeklicanEntities db = new TeklicanEntities();
         private List<OrdersDetail> ShoppingCart = null;
         List<Models.ModelView.Cart> Cart = new List<Models.ModelView.Cart>();
         public ShoppingCartController() 

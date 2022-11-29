@@ -1,120 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="CT25Team22Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityContainer Name="CT25Team22Entities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Accounts" EntityType="CT25Team22Model.Account" />
-    <EntitySet Name="Employees" EntityType="CT25Team22Model.Employee" />
-    <EntitySet Name="Orders" EntityType="CT25Team22Model.Order" />
-    <EntitySet Name="OrdersDetails" EntityType="CT25Team22Model.OrdersDetail" />
-    <EntitySet Name="Products" EntityType="CT25Team22Model.Product" />
-    <EntitySet Name="ProductTypes" EntityType="CT25Team22Model.ProductType" />
-    <EntitySet Name="sysdiagrams" EntityType="CT25Team22Model.sysdiagram" />
-    <EntitySet Name="AccountsTypes" EntityType="CT25Team22Model.AccountsType" />
-    <AssociationSet Name="FK_Order_OrdersDetail" Association="CT25Team22Model.FK_Order_OrdersDetail">
-      <End Role="Order" EntitySet="Orders" />
-      <End Role="OrdersDetail" EntitySet="OrdersDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Product_OrdersDetail" Association="CT25Team22Model.FK_Product_OrdersDetail">
-      <End Role="Product" EntitySet="Products" />
-      <End Role="OrdersDetail" EntitySet="OrdersDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Product_ProductType" Association="CT25Team22Model.FK_Product_ProductType">
-      <End Role="ProductType" EntitySet="ProductTypes" />
-      <End Role="Product" EntitySet="Products" />
-    </AssociationSet>
-    <EntitySet Name="Customers" EntityType="CT25Team22Model.Customer" />
-    <AssociationSet Name="FK_Customer_Order" Association="CT25Team22Model.FK_Customer_Order">
-      <End Role="Customer" EntitySet="Customers" />
-      <End Role="Order" EntitySet="Orders" />
-    </AssociationSet>
-  </EntityContainer>
-  <EntityType Name="Account">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="usernname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="pwd" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="repwd" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="phanquyen" Type="Int32" />
-    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="phone" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-  </EntityType>
-  <EntityType Name="Employee">
-    <Key>
-      <PropertyRef Name="MaNV" />
-    </Key>
-    <Property Name="MaNV" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="TenNV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="GioiTinh" Type="Int32" />
-    <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="DienThoai" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
-  </EntityType>
-  <EntityType Name="Order">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="id_cus" Type="Int32" />
-    <Property Name="total" Type="Double" />
-    <Property Name="create_day" Type="DateTime" Precision="3" />
-    <Property Name="status" Type="Boolean" />
-    <NavigationProperty Name="OrdersDetails" Relationship="CT25Team22Model.FK_Order_OrdersDetail" FromRole="Order" ToRole="OrdersDetail" />
-    <NavigationProperty Name="Customer" Relationship="CT25Team22Model.FK_Customer_Order" FromRole="Order" ToRole="Customer" />
-  </EntityType>
-  <EntityType Name="OrdersDetail">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="id_order" Type="Int32" />
-    <Property Name="id_product" Type="Int32" />
-    <Property Name="quantity" Type="Int32" />
-    <Property Name="sub_total" Type="Double" />
-    <Property Name="status" Type="Boolean" />
-    <NavigationProperty Name="Order" Relationship="CT25Team22Model.FK_Order_OrdersDetail" FromRole="OrdersDetail" ToRole="Order" />
-    <NavigationProperty Name="Product" Relationship="CT25Team22Model.FK_Product_OrdersDetail" FromRole="OrdersDetail" ToRole="Product" />
-  </EntityType>
-  <EntityType Name="Product">
-    <Key>
-      <PropertyRef Name="id_Product" />
-    </Key>
-    <Property Name="id_Product" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="id_ProductType" Type="Int32" />
-    <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="status" Type="Boolean" />
-    <Property Name="inventory" Type="Int32" />
-    <Property Name="img" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <Property Name="tax" Type="Int32" />
-    <Property Name="small_img1" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <Property Name="small_img2" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <Property Name="small_img3" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <Property Name="small_img4" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <Property Name="small_img5" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <NavigationProperty Name="OrdersDetails" Relationship="CT25Team22Model.FK_Product_OrdersDetail" FromRole="Product" ToRole="OrdersDetail" />
-    <NavigationProperty Name="ProductType" Relationship="CT25Team22Model.FK_Product_ProductType" FromRole="Product" ToRole="ProductType" />
-  </EntityType>
-  <EntityType Name="ProductType">
-    <Key>
-      <PropertyRef Name="id_ProductType" />
-    </Key>
-    <Property Name="id_ProductType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Products" Relationship="CT25Team22Model.FK_Product_ProductType" FromRole="ProductType" ToRole="Product" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
+<Schema Namespace="TeklicanModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="AccountsType">
     <Key>
       <PropertyRef Name="id" />
@@ -122,42 +7,6 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
   </EntityType>
-  <Association Name="FK_Order_OrdersDetail">
-    <End Type="CT25Team22Model.Order" Role="Order" Multiplicity="0..1" />
-    <End Type="CT25Team22Model.OrdersDetail" Role="OrdersDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Order">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="OrdersDetail">
-        <PropertyRef Name="id_order" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Product_OrdersDetail">
-    <End Type="CT25Team22Model.Product" Role="Product" Multiplicity="0..1" />
-    <End Type="CT25Team22Model.OrdersDetail" Role="OrdersDetail" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Product">
-        <PropertyRef Name="id_Product" />
-      </Principal>
-      <Dependent Role="OrdersDetail">
-        <PropertyRef Name="id_product" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Product_ProductType">
-    <End Type="CT25Team22Model.ProductType" Role="ProductType" Multiplicity="0..1" />
-    <End Type="CT25Team22Model.Product" Role="Product" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ProductType">
-        <PropertyRef Name="id_ProductType" />
-      </Principal>
-      <Dependent Role="Product">
-        <PropertyRef Name="id_ProductType" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityType Name="Customer">
     <Key>
       <PropertyRef Name="MAKH" />
@@ -169,20 +18,146 @@
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Repass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="phanquyen" Type="Int32" />
-    <Property Name="Email" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <NavigationProperty Name="Orders" Relationship="CT25Team22Model.FK_Customer_Order" FromRole="Customer" ToRole="Order" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
     <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_Customer_Order" FromRole="Customers" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_cus" Type="Int32" />
+    <Property Name="total" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="create_day" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="Boolean" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_Customer_Order" FromRole="Orders" ToRole="Customers" />
+    <NavigationProperty Name="OrdersDetails" Relationship="Self.FK_Order_OrdersDetail" FromRole="Orders" ToRole="OrdersDetails" />
+  </EntityType>
+  <EntityType Name="OrdersDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_order" Type="Int32" />
+    <Property Name="id_product" Type="Int32" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="sub_total" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="status" Type="Boolean" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_Order_OrdersDetail" FromRole="OrdersDetails" ToRole="Orders" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_Product_OrdersDetail" FromRole="OrdersDetails" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="id_Product" />
+    </Key>
+    <Property Name="id_Product" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="id_ProductType" Type="Int32" />
+    <Property Name="price" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="inventory" Type="Int32" />
+    <Property Name="img" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="tax" Type="Int32" />
+    <Property Name="small_img1" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="small_img2" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="small_img3" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="small_img4" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="small_img5" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="old_price" Type="Double" />
+    <NavigationProperty Name="OrdersDetails" Relationship="Self.FK_Product_OrdersDetail" FromRole="Products" ToRole="OrdersDetails" />
+    <NavigationProperty Name="ProductType" Relationship="Self.FK_Product_ProductType" FromRole="Products" ToRole="ProductTypes" />
+  </EntityType>
+  <EntityType Name="ProductType">
+    <Key>
+      <PropertyRef Name="id_ProductType" />
+    </Key>
+    <Property Name="id_ProductType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_Product_ProductType" FromRole="ProductTypes" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <Association Name="FK_Customer_Order">
-    <End Type="CT25Team22Model.Customer" Role="Customer" Multiplicity="0..1" />
-    <End Type="CT25Team22Model.Order" Role="Order" Multiplicity="*" />
+    <End Role="Customers" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Customer">
+      <Principal Role="Customers">
         <PropertyRef Name="MAKH" />
       </Principal>
-      <Dependent Role="Order">
+      <Dependent Role="Orders">
         <PropertyRef Name="id_cus" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Order_OrdersDetail">
+    <End Role="Orders" Type="Self.Order" Multiplicity="0..1" />
+    <End Role="OrdersDetails" Type="Self.OrdersDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="OrdersDetails">
+        <PropertyRef Name="id_order" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_OrdersDetail">
+    <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="OrdersDetails" Type="Self.OrdersDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="id_Product" />
+      </Principal>
+      <Dependent Role="OrdersDetails">
+        <PropertyRef Name="id_product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_ProductType">
+    <End Role="ProductTypes" Type="Self.ProductType" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductTypes">
+        <PropertyRef Name="id_ProductType" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="id_ProductType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TeklicanEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AccountsTypes" EntityType="Self.AccountsType" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="OrdersDetails" EntityType="Self.OrdersDetail" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="ProductTypes" EntityType="Self.ProductType" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK_Customer_Order" Association="Self.FK_Customer_Order">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_OrdersDetail" Association="Self.FK_Order_OrdersDetail">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrdersDetails" EntitySet="OrdersDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_OrdersDetail" Association="Self.FK_Product_OrdersDetail">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="OrdersDetails" EntitySet="OrdersDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_ProductType" Association="Self.FK_Product_ProductType">
+      <End Role="ProductTypes" EntitySet="ProductTypes" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+  </EntityContainer>
 </Schema>

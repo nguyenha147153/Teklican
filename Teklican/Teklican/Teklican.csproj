@@ -142,40 +142,40 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\AccountsType.cs">
-      <DependentUpon>CT25Team22.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entities\CT25Team22.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CT25Team22.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entities\CT25Team22.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CT25Team22.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entities\CT25Team22.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CT25Team22.edmx</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\Customer.cs">
-      <DependentUpon>CT25Team22.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\Order.cs">
-      <DependentUpon>CT25Team22.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\OrdersDetail.cs">
-      <DependentUpon>CT25Team22.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\Product.cs">
-      <DependentUpon>CT25Team22.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\ProductType.cs">
-      <DependentUpon>CT25Team22.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\sysdiagram.cs">
-      <DependentUpon>CT25Team22.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ModelView\Cart.cs" />
     <Compile Include="Models\ModelView\CustomerView.cs" />
@@ -330,15 +330,15 @@
     <Content Include="images\xsmb.png" />
     <Content Include="images\xsmw.jpg" />
     <Content Include="images\zf2.jpg" />
-    <Content Include="Models\Entities\CT25Team22.Context.tt">
+    <Content Include="Models\Entities\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CT25Team22.edmx</DependentUpon>
-      <LastGenOutput>CT25Team22.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Entities\CT25Team22.tt">
+    <Content Include="Models\Entities\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CT25Team22.edmx</DependentUpon>
-      <LastGenOutput>CT25Team22.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -346,13 +346,6 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
-    <EntityDeploy Include="Models\Entities\CT25Team22.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CT25Team22.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Entities\CT25Team22.edmx.diagram">
-      <DependentUpon>CT25Team22.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\Admin\assets\.DS_Store" />
     <Content Include="Areas\Admin\assets\fonts\datta\fonts\pct.eot" />
     <Content Include="Areas\Admin\assets\fonts\datta\fonts\pct.ttf" />
@@ -387,6 +380,13 @@
     <Content Include="Areas\Admin\Views\Product\Update.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\web.config" />
+    <EntityDeploy Include="Models\Entities\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Entities\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
